@@ -1,0 +1,44 @@
+[
+  {
+    "id": 27,
+    "title": "Responsible timber",
+    "body": "Timber is sourced from agroforestry plantations with strict traceability, reflecting a commitment to sustainability.",
+    "imageUrl": "",
+    "sortOrder": 0
+  },
+  {
+    "id": 28,
+    "title": "Veneer preparation",
+    "body": "Veneers are calibrated to help eliminate warping, blisters and gaps. In MR Value – Accurate 16mm, tenderised veneers route cleanly for CNC grooves.",
+    "imageUrl": "",
+    "sortOrder": 1
+  },
+  {
+    "id": 29,
+    "title": "Preservation",
+    "body": "MR Eco & Gold Grade receives vacuum-impregnated anti-termite and borer protection (ATBS). MR Value uses GLT preservation for fungal resistance.",
+    "imageUrl": "",
+    "sortOrder": 2
+  },
+  {
+    "id": 30,
+    "title": "Bonding",
+    "body": "Power Seal adhesive bonds the layers. MR Value – Accurate 16mm integrates Power Seal through the core with BWP-type resin.",
+    "imageUrl": "",
+    "sortOrder": 3
+  },
+  {
+    "id": 31,
+    "title": "Pressing & calibration",
+    "body": "Boards are pressed and calibrated to precise thickness — MR Value – Accurate 16mm is held to ±0.2mm.",
+    "imageUrl": "",
+    "sortOrder": 4
+  },
+  {
+    "id": 32,
+    "title": "Fire-retardant treatment",
+    "body": "For Fireguard FR Ply, fire-retardant chemicals are pressure infused and surface coated while keeping the natural finish intact.",
+    "imageUrl": "",
+    "sortOrder": 5
+  }
+]

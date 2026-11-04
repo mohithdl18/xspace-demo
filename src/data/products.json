@@ -1,0 +1,433 @@
+[
+  {
+    "id": 9,
+    "slug": "mr-eco-gold-grade",
+    "name": "MR Eco & Gold Grade",
+    "category": "plywood",
+    "grade": "MR",
+    "gradeLabel": "Moisture Resistant",
+    "tagline": "Eco-friendly timber, sealed and shielded for interiors.",
+    "description": "Premium-grade plywood crafted from eco-friendly timber and fortified with Power Seal adhesive plus ATBS termite shield. Built to endure six boiling/drying cycles without swelling.",
+    "thicknesses": [
+      "6mm",
+      "8mm",
+      "12mm",
+      "18mm",
+      "25mm",
+      "30mm",
+      "60mm"
+    ],
+    "applications": [
+      "Partitions & paneling",
+      "Furniture carcasses",
+      "False ceilings",
+      "Interior décor",
+      "Musical instruments"
+    ],
+    "benefits": [
+      "Vacuum-impregnated anti-termite and borer protection",
+      "Hydro Shield technology stabilises cores in humid climates",
+      "Calibrated veneers help eliminate warping, blisters and gaps"
+    ],
+    "technologies": [
+      "Power Seal adhesive",
+      "ATBS termite shield",
+      "Hydro Shield"
+    ],
+    "specs": [
+      {
+        "label": "Grade",
+        "value": "MR (Moisture Resistant)"
+      },
+      {
+        "label": "Adhesive",
+        "value": "Power Seal"
+      },
+      {
+        "label": "Termite protection",
+        "value": "ATBS termite shield, vacuum impregnated"
+      },
+      {
+        "label": "Cycle test",
+        "value": "Six boiling/drying cycles without swelling"
+      }
+    ],
+    "imageUrl": "/images/products/mr-eco-gold-grade.jpeg",
+    "imageAlt": "Stacked plywood sheets showing smooth face veneer and layered edges",
+    "tone": "birch",
+    "featured": true,
+    "published": true,
+    "verified": true,
+    "sortOrder": 0,
+    "seoTitle": "",
+    "seoDescription": "",
+    "updatedAt": "2026-11-01"
+  },
+  {
+    "id": 20,
+    "slug": "bwr-grade",
+    "name": "BWR Grade",
+    "category": "plywood",
+    "grade": "BWR",
+    "gradeLabel": "Boiling Water Resistant",
+    "tagline": "For kitchens, bathrooms and other damp interiors.",
+    "description": "BWR (Boiling Water Resistant) grade plywood for interior spaces exposed to moisture. Ask our team for full specifications.",
+    "thicknesses": [
+      "6mm",
+      "8mm",
+      "12mm",
+      "18mm",
+      "25mm",
+      "30mm",
+      "60mm"
+    ],
+    "applications": [],
+    "benefits": [],
+    "technologies": [],
+    "specs": [
+      {
+        "label": "Grade",
+        "value": "BWR (Boiling Water Resistant)"
+      }
+    ],
+    "imageUrl": "/images/products/bwr-grade.jpg",
+    "imageAlt": "Close-up of stacked plywood sheets with clean, layered edges",
+    "tone": "oak",
+    "featured": true,
+    "published": true,
+    "verified": false,
+    "sortOrder": 1,
+    "seoTitle": "",
+    "seoDescription": "",
+    "updatedAt": "2026-11-05"
+  },
+  {
+    "id": 10,
+    "slug": "mr-value-accurate-16mm",
+    "name": "MR Value – Accurate 16mm",
+    "category": "plywood",
+    "grade": "MR",
+    "gradeLabel": "Calibrated Core",
+    "tagline": "True 16mm, held to ±0.2mm.",
+    "description": "True 16mm plywood with ±0.2mm tolerance. BWP-type resin and GLT preservation deliver marine-grade bonding and fungal resistance.",
+    "thicknesses": [
+      "16mm"
+    ],
+    "applications": [
+      "Modular kitchens",
+      "Cabinet carcasses",
+      "Vehicle flooring",
+      "Laminate pressing lines",
+      "Ship building"
+    ],
+    "benefits": [
+      "Tenderised veneers route cleanly for CNC grooves",
+      "BWP resin locks layers for high screw-holding strength",
+      "Power Seal adhesive integrated through the core"
+    ],
+    "technologies": [
+      "Power Seal adhesive",
+      "GLT preservation",
+      "Calibrated core"
+    ],
+    "specs": [
+      {
+        "label": "Thickness",
+        "value": "16mm"
+      },
+      {
+        "label": "Tolerance",
+        "value": "±0.2mm"
+      },
+      {
+        "label": "Resin",
+        "value": "BWP-type"
+      },
+      {
+        "label": "Preservation",
+        "value": "GLT"
+      }
+    ],
+    "imageUrl": "",
+    "imageAlt": "",
+    "tone": "oak",
+    "featured": false,
+    "published": true,
+    "verified": true,
+    "sortOrder": 3,
+    "seoTitle": "",
+    "seoDescription": "",
+    "updatedAt": "2026-11-01"
+  },
+  {
+    "id": 11,
+    "slug": "bwp-elite-prime-710",
+    "name": "BWP Elite & Prime 710",
+    "category": "plywood",
+    "grade": "BWP",
+    "gradeLabel": "Boiling Water Proof",
+    "tagline": "Boiling water proof plywood, 6mm to 60mm.",
+    "description": "Boiling Water Proof plywood in the Elite and Prime ranges, available across seven thicknesses from 6mm to 60mm. Ask our team for the full technical sheet for your application.",
+    "thicknesses": [
+      "6mm",
+      "8mm",
+      "12mm",
+      "18mm",
+      "25mm",
+      "30mm",
+      "60mm"
+    ],
+    "applications": [],
+    "benefits": [],
+    "technologies": [],
+    "specs": [
+      {
+        "label": "Grade",
+        "value": "BWP (Boiling Water Proof)"
+      },
+      {
+        "label": "Ranges",
+        "value": "Elite, Prime"
+      }
+    ],
+    "imageUrl": "/images/products/bwp-elite-prime-710.jpg",
+    "imageAlt": "Stack of plywood sheets on a workshop floor, edges catching the light",
+    "tone": "walnut",
+    "featured": true,
+    "published": true,
+    "verified": true,
+    "sortOrder": 2,
+    "seoTitle": "",
+    "seoDescription": "",
+    "updatedAt": "2026-11-01"
+  },
+  {
+    "id": 12,
+    "slug": "fireguard-fr-ply",
+    "name": "Fireguard FR Ply",
+    "category": "plywood",
+    "grade": "FR",
+    "gradeLabel": "Fire Retardant",
+    "tagline": "Self-extinguishing faces, natural finish intact.",
+    "description": "Proprietary fire-retardant chemicals are pressure infused and surface coated, delivering self-extinguishing plywood that keeps its natural finish intact.",
+    "thicknesses": [
+      "12mm",
+      "16mm",
+      "19mm",
+      "25mm"
+    ],
+    "applications": [
+      "Auditoriums",
+      "Transit terminals",
+      "High-rise lobbies",
+      "Data centres"
+    ],
+    "benefits": [
+      "Flame spread index below 40, with self-extinguishing faces",
+      "Reduced toxic gas generation and carbon monoxide exposure",
+      "Weather-resistant surface coat paired with a treated core"
+    ],
+    "technologies": [
+      "Fireguard"
+    ],
+    "specs": [
+      {
+        "label": "Grade",
+        "value": "FR (Fire Retardant)"
+      },
+      {
+        "label": "Treatment",
+        "value": "Pressure infused and surface coated"
+      },
+      {
+        "label": "Flame spread index",
+        "value": "< 40"
+      }
+    ],
+    "imageUrl": "",
+    "imageAlt": "",
+    "tone": "ember",
+    "featured": false,
+    "published": true,
+    "verified": true,
+    "sortOrder": 4,
+    "seoTitle": "",
+    "seoDescription": "",
+    "updatedAt": "2026-11-01"
+  },
+  {
+    "id": 13,
+    "slug": "blockboard",
+    "name": "Blockboard",
+    "category": "blockboard",
+    "grade": "",
+    "gradeLabel": "",
+    "tagline": "Grades, sizes and finishes on request.",
+    "description": "Part of the XSpace interior materials range. Contact our team for current grades, sizes and availability of blockboard.",
+    "thicknesses": [],
+    "applications": [],
+    "benefits": [],
+    "technologies": [],
+    "specs": [],
+    "imageUrl": "",
+    "imageAlt": "",
+    "tone": "pine",
+    "featured": false,
+    "published": true,
+    "verified": false,
+    "sortOrder": 10,
+    "seoTitle": "",
+    "seoDescription": "",
+    "updatedAt": "2026-11-01"
+  },
+  {
+    "id": 14,
+    "slug": "doors",
+    "name": "Doors",
+    "category": "doors",
+    "grade": "",
+    "gradeLabel": "",
+    "tagline": "Grades, sizes and finishes on request.",
+    "description": "Part of the XSpace interior materials range. Contact our team for current grades, sizes and availability of doors.",
+    "thicknesses": [],
+    "applications": [],
+    "benefits": [],
+    "technologies": [],
+    "specs": [],
+    "imageUrl": "",
+    "imageAlt": "",
+    "tone": "oak",
+    "featured": false,
+    "published": true,
+    "verified": false,
+    "sortOrder": 11,
+    "seoTitle": "",
+    "seoDescription": "",
+    "updatedAt": "2026-11-01"
+  },
+  {
+    "id": 15,
+    "slug": "mdf",
+    "name": "MDF Boards",
+    "category": "mdf",
+    "grade": "",
+    "gradeLabel": "",
+    "tagline": "Grades, sizes and finishes on request.",
+    "description": "Part of the XSpace interior materials range. Contact our team for current grades, sizes and availability of mdf boards.",
+    "thicknesses": [],
+    "applications": [],
+    "benefits": [],
+    "technologies": [],
+    "specs": [],
+    "imageUrl": "",
+    "imageAlt": "",
+    "tone": "mdf",
+    "featured": false,
+    "published": true,
+    "verified": false,
+    "sortOrder": 12,
+    "seoTitle": "",
+    "seoDescription": "",
+    "updatedAt": "2026-11-01"
+  },
+  {
+    "id": 16,
+    "slug": "laminates",
+    "name": "Decorative Laminates",
+    "category": "laminates",
+    "grade": "",
+    "gradeLabel": "",
+    "tagline": "Grades, sizes and finishes on request.",
+    "description": "Part of the XSpace interior materials range. Contact our team for current grades, sizes and availability of decorative laminates.",
+    "thicknesses": [],
+    "applications": [],
+    "benefits": [],
+    "technologies": [],
+    "specs": [],
+    "imageUrl": "",
+    "imageAlt": "",
+    "tone": "laminate",
+    "featured": false,
+    "published": true,
+    "verified": false,
+    "sortOrder": 13,
+    "seoTitle": "",
+    "seoDescription": "",
+    "updatedAt": "2026-11-01"
+  },
+  {
+    "id": 17,
+    "slug": "pvc-foam-boards",
+    "name": "PVC Foam Boards",
+    "category": "pvc-foam-boards",
+    "grade": "",
+    "gradeLabel": "",
+    "tagline": "Grades, sizes and finishes on request.",
+    "description": "Part of the XSpace interior materials range. Contact our team for current grades, sizes and availability of pvc foam boards.",
+    "thicknesses": [],
+    "applications": [],
+    "benefits": [],
+    "technologies": [],
+    "specs": [],
+    "imageUrl": "",
+    "imageAlt": "",
+    "tone": "pvc",
+    "featured": false,
+    "published": true,
+    "verified": false,
+    "sortOrder": 14,
+    "seoTitle": "",
+    "seoDescription": "",
+    "updatedAt": "2026-11-01"
+  },
+  {
+    "id": 18,
+    "slug": "particle-boards",
+    "name": "Particle Boards",
+    "category": "particle-boards",
+    "grade": "",
+    "gradeLabel": "",
+    "tagline": "Grades, sizes and finishes on request.",
+    "description": "Part of the XSpace interior materials range. Contact our team for current grades, sizes and availability of particle boards.",
+    "thicknesses": [],
+    "applications": [],
+    "benefits": [],
+    "technologies": [],
+    "specs": [],
+    "imageUrl": "",
+    "imageAlt": "",
+    "tone": "particle",
+    "featured": false,
+    "published": true,
+    "verified": false,
+    "sortOrder": 15,
+    "seoTitle": "",
+    "seoDescription": "",
+    "updatedAt": "2026-11-01"
+  },
+  {
+    "id": 19,
+    "slug": "timber",
+    "name": "Timber",
+    "category": "timber",
+    "grade": "",
+    "gradeLabel": "",
+    "tagline": "Grades, sizes and finishes on request.",
+    "description": "Part of the XSpace interior materials range. Contact our team for current grades, sizes and availability of timber.",
+    "thicknesses": [],
+    "applications": [],
+    "benefits": [],
+    "technologies": [],
+    "specs": [],
+    "imageUrl": "",
+    "imageAlt": "",
+    "tone": "walnut",
+    "featured": false,
+    "published": true,
+    "verified": false,
+    "sortOrder": 16,
+    "seoTitle": "",
+    "seoDescription": "",
+    "updatedAt": "2026-11-01"
+  }
+]

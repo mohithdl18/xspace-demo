@@ -1,0 +1,86 @@
+[
+  {
+    "id": 33,
+    "slug": "interiors",
+    "name": "Home interiors",
+    "summary": "Walls, ceilings and the quiet structure behind finished rooms.",
+    "uses": [
+      "Partitions & paneling",
+      "False ceilings",
+      "Interior décor"
+    ],
+    "productSlugs": [
+      "mr-eco-gold-grade"
+    ],
+    "imageUrl": "",
+    "imageIsInspiration": true,
+    "sortOrder": 0
+  },
+  {
+    "id": 34,
+    "slug": "furniture-kitchens",
+    "name": "Furniture & kitchens",
+    "summary": "Carcasses and cabinetry that need stable, screw-holding boards.",
+    "uses": [
+      "Furniture carcasses",
+      "Modular kitchens",
+      "Cabinet carcasses"
+    ],
+    "productSlugs": [
+      "mr-eco-gold-grade"
+    ],
+    "imageUrl": "",
+    "imageIsInspiration": true,
+    "sortOrder": 1
+  },
+  {
+    "id": 35,
+    "slug": "commercial-public",
+    "name": "Commercial & public spaces",
+    "summary": "Fire-sensitive environments where safety is specified first.",
+    "uses": [
+      "Auditoriums",
+      "Transit terminals",
+      "High-rise lobbies",
+      "Data centres"
+    ],
+    "productSlugs": [
+      "fireguard-fr-ply"
+    ],
+    "imageUrl": "",
+    "imageIsInspiration": true,
+    "sortOrder": 2
+  },
+  {
+    "id": 36,
+    "slug": "industrial-transport",
+    "name": "Industrial & transport",
+    "summary": "Precision boards for production lines, vehicles and vessels.",
+    "uses": [
+      "Laminate pressing lines",
+      "Vehicle flooring",
+      "Ship building"
+    ],
+    "productSlugs": [
+      "mr-value-accurate-16mm"
+    ],
+    "imageUrl": "",
+    "imageIsInspiration": true,
+    "sortOrder": 3
+  },
+  {
+    "id": 37,
+    "slug": "specialist",
+    "name": "Specialist craft",
+    "summary": "Where tone, stability and finish all matter.",
+    "uses": [
+      "Musical instruments"
+    ],
+    "productSlugs": [
+      "mr-eco-gold-grade"
+    ],
+    "imageUrl": "",
+    "imageIsInspiration": true,
+    "sortOrder": 4
+  }
+]

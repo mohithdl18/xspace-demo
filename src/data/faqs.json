@@ -1,0 +1,42 @@
+[
+  {
+    "id": 21,
+    "question": "Which plywood grades does XSpace offer?",
+    "answer": "The plywood range includes MR Eco & Gold Grade, MR Value – Accurate 16mm, BWP Elite & Prime 710 and Fireguard FR Ply. Each grade is designed for different conditions, from dry interiors to fire-sensitive public spaces.",
+    "topic": "Products",
+    "published": true,
+    "sortOrder": 0
+  },
+  {
+    "id": 22,
+    "question": "What do MR, BWP and FR mean?",
+    "answer": "MR stands for Moisture Resistant, BWP for Boiling Water Proof and FR for Fire Retardant. Tell us where the material will be used and our team will recommend the right grade.",
+    "topic": "Products",
+    "published": true,
+    "sortOrder": 1
+  },
+  {
+    "id": 23,
+    "question": "Which thicknesses are available?",
+    "answer": "MR Eco & Gold Grade, BWR Grade and BWP Elite & Prime 710 are available in 6, 8, 12, 18, 25, 30 and 60mm. Fireguard FR Ply is listed in 12, 16, 19 and 25mm. MR Value – Accurate 16mm is a true 16mm board. For other products, please ask for current availability.",
+    "topic": "Products",
+    "published": true,
+    "sortOrder": 2
+  },
+  {
+    "id": 24,
+    "question": "How do I get a quotation?",
+    "answer": "Use the Request a Quote form with the product, thickness and quantity you need, or contact us by phone, email or WhatsApp. We do not take payments on this website.",
+    "topic": "Ordering",
+    "published": true,
+    "sortOrder": 3
+  },
+  {
+    "id": 25,
+    "question": "Where is XSpace Plywood based?",
+    "answer": "Plot No. 209 G, KIADB Industrial Area, Hosakoppalu, Hassan, Karnataka. XSpace Plywood is powered by C Nanjappa Timbers.",
+    "topic": "Company",
+    "published": true,
+    "sortOrder": 4
+  }
+]

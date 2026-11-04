@@ -1,0 +1,299 @@
+@import 'tailwindcss';
+@import 'lenis/dist/lenis.css';
+
+@theme {
+  --color-ink: #111111;
+  --color-ice: #eff7fc;
+  --color-sky: #c8e4f4;
+  --color-walnut: #694530;
+  --color-oak: #a67c52;
+  --color-slate: #3d4a55;
+
+  --font-sans: Poppins, system-ui, sans-serif;
+
+  --text-display: clamp(2.6rem, 6.1vw, 6.6rem);
+  --text-display--line-height: 0.98;
+  --text-display--letter-spacing: -0.035em;
+  --text-h1: clamp(2.25rem, 4.6vw, 4.5rem);
+  --text-h1--line-height: 1.04;
+  --text-h1--letter-spacing: -0.03em;
+  --text-h2: clamp(1.75rem, 3.2vw, 3rem);
+  --text-h2--line-height: 1.1;
+  --text-h2--letter-spacing: -0.025em;
+  --text-h3: clamp(1.25rem, 1.8vw, 1.6rem);
+  --text-h3--line-height: 1.25;
+  --text-h3--letter-spacing: -0.015em;
+
+  --container-frame: 1440px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility frame {
+  @apply mx-auto w-full max-w-frame px-5 sm:px-8 lg:px-12;
+}
+
+@utility eyebrow {
+  @apply text-[0.72rem] font-medium uppercase tracking-[0.22em] text-walnut;
+}
+
+@utility rule {
+  border-top: 1px solid var(--line);
+}
+
+@utility section {
+  @apply py-20 md:py-28 lg:py-36;
+}
+
+@utility btn {
+  @apply relative inline-flex min-h-[48px] items-center justify-center gap-3 overflow-hidden px-6 text-sm font-medium tracking-wide transition-[background-color,color,box-shadow,transform] duration-300 ease-out;
+  isolation: isolate;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transform: translateY(101%);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  &:hover::before {
+    transform: translateY(0);
+  }
+  &:focus-visible::before {
+    transform: translateY(0);
+  }
+  &:active {
+    transform: scale(0.98);
+  }
+  & .arrow {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  &:hover .arrow {
+    transform: translateX(4px);
+  }
+}
+
+@utility btn-primary {
+  @apply bg-ink text-white;
+  &::before {
+    background: var(--walnut);
+  }
+}
+
+@utility btn-outline {
+  @apply border border-ink/80 text-ink;
+  &::before {
+    background: var(--ink);
+  }
+  &:hover {
+    @apply text-white;
+  }
+  &:focus-visible {
+    @apply text-white;
+  }
+}
+
+@utility btn-outline-light {
+  @apply border border-white/70 text-white;
+  &::before {
+    background: var(--white);
+  }
+  &:hover {
+    @apply text-ink;
+  }
+  &:focus-visible {
+    @apply text-ink;
+  }
+}
+
+@utility btn-light {
+  @apply bg-white text-ink;
+  &::before {
+    background: var(--sky);
+  }
+}
+
+@utility arrow {
+  .btn & {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn:hover & {
+    transform: translateX(4px);
+  }
+}
+
+@utility link-u {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px
+    no-repeat;
+  transition: background-size 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  &:hover {
+    background-size: 100% 1px;
+  }
+  &:focus-visible {
+    background-size: 100% 1px;
+  }
+}
+
+@utility chip {
+  @apply inline-flex min-h-[32px] items-center border border-ink/15 px-3 text-xs font-medium text-ink/80;
+}
+
+@utility badge {
+  @apply inline-flex items-center bg-sky px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-ink;
+}
+
+@utility field {
+  & label {
+    @apply mb-2 block text-xs font-medium uppercase tracking-[0.14em] text-ink/70;
+  }
+}
+
+@utility input {
+  @apply block min-h-[48px] w-full border border-ink/20 bg-white px-4 py-3 text-[15px] text-ink placeholder:text-ink/40 transition-colors;
+  border-radius: 0;
+  &:hover {
+    @apply border-ink/40;
+  }
+  &:focus {
+    @apply border-ink outline-hidden;
+    box-shadow: 0 0 0 3px var(--sky);
+  }
+  &[aria-invalid='true'] {
+    @apply border-[#B42318];
+  }
+}
+
+@utility field-error {
+  @apply mt-1.5 text-[13px] text-[#B42318];
+}
+
+@utility placeholder-tag {
+  @apply absolute left-3 top-3 z-10 bg-white/90 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-ink/70 backdrop-blur-sm;
+}
+
+@layer base {
+  :root {
+    --white: #ffffff;
+    --ice: #eff7fc;
+    --sky: #c8e4f4;
+    --ink: #111111;
+    --walnut: #694530;
+    --oak: #a67c52;
+    --line: rgba(17, 17, 17, 0.12);
+    --header-h: 76px;
+    color-scheme: light;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: calc(var(--header-h) + 16px);
+  }
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+    font-weight: 400;
+    overflow-x: clip;
+  }
+  ::selection { background: var(--sky); color: var(--ink); }
+
+  /* Visible, consistent focus for keyboard users */
+  :focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  .on-dark :focus-visible { outline-color: var(--sky); }
+
+  h1, h2, h3, h4 { font-weight: 500; }
+  img { max-width: 100%; height: auto; }
+}
+
+/* Page enter transition (restrained) */
+@keyframes page-in { from { opacity: 0; } to { opacity: 1; } }
+.page-enter { animation: page-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Plywood edge: alternating veneer plies (illustrative) */
+.ply-edge {
+  background: repeating-linear-gradient(
+    to bottom,
+    #e6cfa8 0, #e6cfa8 var(--ply, 3px),
+    #b98d5c var(--ply, 3px), #b98d5c calc(var(--ply, 3px) * 2)
+  );
+}
+.ply-edge-dark {
+  background: repeating-linear-gradient(
+    to bottom,
+    #9a6c45 0, #9a6c45 var(--ply, 3px),
+    #5c3a26 var(--ply, 3px), #5c3a26 calc(var(--ply, 3px) * 2)
+  );
+}
+.ply-edge-v {
+  background: repeating-linear-gradient(
+    to right,
+    #e6cfa8 0, #e6cfa8 var(--ply, 3px),
+    #b98d5c var(--ply, 3px), #b98d5c calc(var(--ply, 3px) * 2)
+  );
+}
+.ply-edge-dark-v {
+  background: repeating-linear-gradient(
+    to right,
+    #9a6c45 0, #9a6c45 var(--ply, 3px),
+    #5c3a26 var(--ply, 3px), #5c3a26 calc(var(--ply, 3px) * 2)
+  );
+}
+
+/* Hero intro pre-hide (see inline script in app/layout.jsx) */
+.js-motion:not(.motion-timeout) [data-hero] { visibility: hidden; }
+
+select.input {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 2.75rem;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path d='M2 4l4 4 4-4' fill='none' stroke='%23111' stroke-width='1.4'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 12px;
+}
+
+/* Hero scroll cue: arrow nudges downward */
+@keyframes cue-nudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+.cue-nudge svg { animation: cue-nudge 1.8s cubic-bezier(0.45, 0, 0.55, 1) infinite; }
+
+/* Home page: the footer rises up over the fixed contact section.
+   The page ends with a 50svh spacer ([data-footer-reveal]); the footer is
+   pulled up onto it. */
+main:has([data-footer-reveal]) ~ footer {
+  margin-top: -50svh;
+}
+
+/* Floating WhatsApp button: soft pulsing ring */
+@keyframes wa-pulse {
+  0% { transform: scale(1); opacity: 0.4; }
+  70%, 100% { transform: scale(1.6); opacity: 0; }
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "plywood",
+    "name": "Plywood",
+    "summary": "Moisture resistant, boiling water proof, calibrated and fire retardant grades.",
+    "sortOrder": 0
+  },
+  {
+    "slug": "blockboard",
+    "name": "Blockboard",
+    "summary": "Blockboard for furniture and interior joinery.",
+    "sortOrder": 1
+  },
+  {
+    "slug": "doors",
+    "name": "Doors",
+    "summary": "Doors for residential and commercial interiors.",
+    "sortOrder": 2
+  },
+  {
+    "slug": "mdf",
+    "name": "MDF",
+    "summary": "Medium density fibreboard for smooth, machinable surfaces.",
+    "sortOrder": 3
+  },
+  {
+    "slug": "laminates",
+    "name": "Laminates",
+    "summary": "Decorative surface laminates.",
+    "sortOrder": 4
+  },
+  {
+    "slug": "pvc-foam-boards",
+    "name": "PVC Foam Boards",
+    "summary": "PVC foam boards.",
+    "sortOrder": 5
+  },
+  {
+    "slug": "particle-boards",
+    "name": "Particle Boards",
+    "summary": "Particle boards.",
+    "sortOrder": 6
+  },
+  {
+    "slug": "timber",
+    "name": "Timber",
+    "summary": "Timber, backed by the C Nanjappa Timbers heritage.",
+    "sortOrder": 7
+  }
+]
