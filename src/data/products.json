@@ -2,7 +2,7 @@
   {
     "id": 9,
     "slug": "mr-eco-gold-grade",
-    "name": "MR Eco & Gold Grade",
+    "name": "MR - Moisture Resistant",
     "category": "plywood",
     "grade": "MR",
     "gradeLabel": "Moisture Resistant",
@@ -66,7 +66,7 @@
   {
     "id": 20,
     "slug": "bwr-grade",
-    "name": "BWR Grade",
+    "name": "BWR - Boiling Water Resistant",
     "category": "plywood",
     "grade": "BWR",
     "gradeLabel": "Boiling Water Resistant",
@@ -104,7 +104,7 @@
   {
     "id": 10,
     "slug": "mr-value-accurate-16mm",
-    "name": "MR Value – Accurate 16mm",
+    "name": "MR - Moisture Resistant – Accurate 16mm",
     "category": "plywood",
     "grade": "MR",
     "gradeLabel": "Calibrated Core",
@@ -162,7 +162,7 @@
   {
     "id": 11,
     "slug": "bwp-elite-prime-710",
-    "name": "BWP Elite & Prime 710",
+    "name": "BWP - Boiling Water Proof",
     "category": "plywood",
     "grade": "BWP",
     "gradeLabel": "Boiling Water Proof",

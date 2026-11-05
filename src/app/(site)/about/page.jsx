@@ -79,7 +79,7 @@ export default function AboutPage() {
               <p className="text-h1 font-medium text-walnut">{c.foundedYear}</p>
               <p className="mt-4 text-[17px] font-medium">The heritage begins</p>
               <p className="mt-2 text-[15px] leading-relaxed text-ink/70">
-                The {c.poweredBy} story starts — the foundation XSpace is built on.
+                Built on the legacy of C Nanjappa Timbers, XSpace found its true foundation.
               </p>
             </li>
             <li className="bg-ice p-8 md:p-12">

@@ -37,7 +37,7 @@ export default function FaqPage() {
                 <SplitWords>Common questions.</SplitWords>
               </h1>
               <p className="mt-6 max-w-md text-[17px] leading-relaxed text-ink/70 md:text-lg md:leading-[1.75rem]" data-reveal>
-                Grades, thicknesses, applications and how to order — quick answers from the XSpace team.
+                Grades, thicknesses, applications and how to order, quick answers from the XSpace team.
               </p>
               <p className="mt-8 text-[16px] leading-relaxed text-ink/70" data-reveal>
                 Can’t find your answer?{" "}

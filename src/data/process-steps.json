@@ -8,30 +8,37 @@
   },
   {
     "id": 28,
-    "title": "Veneer preparation",
-    "body": "Veneers are carefully dried to reduce moisture and prepare them for bonding.",
+    "title": "Veneer Peeling",
+    "body": "Debarked logs are precisely peeled into thin, uniform veneers, forming the foundation of our plywood.",
     "imageUrl": "",
     "sortOrder": 1
   },
   {
     "id": 29,
-    "title": "Bonding",
-    "body": "Imported adhesives create strong, lasting bonds between every veneer layer.",
+    "title": "Veneer Preparation",
+    "body": "Controlled drying removes excess moisture, preparing veneers for strong, consistent bonding.",
     "imageUrl": "",
     "sortOrder": 2
   },
   {
     "id": 30,
-    "title": "Pressing & calibration",
-    "body": "Heat pressing strengthens bonding, while precision calibration ensures uniform thickness.",
+    "title": "Bonding",
+    "body": "Imported adhesives create strong, lasting bonds between every veneer layer.",
     "imageUrl": "",
     "sortOrder": 3
   },
   {
     "id": 31,
-    "title": "Preservation",
-    "body": "Protective treatments enhance termite and fire resistance for lasting durability.",
+    "title": "Pressing & calibration",
+    "body": "Heat pressing strengthens bonding, while precision calibration ensures uniform thickness.",
     "imageUrl": "",
     "sortOrder": 4
+  },
+  {
+    "id": 32,
+    "title": "Finishing",
+    "body": "Precision sanding creates a smooth, uniform surface, ready for laminates, veneers or polish.",
+    "imageUrl": "",
+    "sortOrder": 5
   }
 ]

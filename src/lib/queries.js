@@ -47,6 +47,7 @@ function toView(p, category) {
     description: p.description || "",
     thicknesses: list(p.thicknesses),
     applications: list(p.applications),
+    bestFor: list(p.bestFor),
     benefits: list(p.benefits),
     technologies: list(p.technologies),
     specs: specs(p.specs),

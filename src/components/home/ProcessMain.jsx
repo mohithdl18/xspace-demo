@@ -12,19 +12,19 @@ gsap.registerPlugin(ScrollTrigger);
  * Home — manufacturing journey.
  *
  * One full-screen stage that docks under the header and stays put while you
- * scroll through 6 scenes (intro + 5 stages):
+ * scroll through 7 scenes (intro + 6 stages):
  *   • the photo stays still;
  *   • scrolling moves only the text — the current text travels up and out
  *     while the next stage's text rises from below;
  *   • once the incoming text reaches the middle of the screen, the photo
  *     crossfades to the next one.
  *
- * Without JavaScript, the same 6 scenes simply stack as full-screen blocks —
+ * Without JavaScript, the same 7 scenes simply stack as full-screen blocks —
  * identical total height, all content readable.
  *
  * Background photos: replace the files in /public/images/process/ to change them.
  */
-/** The five manufacturing stages (edit here to change the copy) */
+/** The six manufacturing stages (edit here to change the copy) */
 const STEPS = [
   {
     id: 27,
@@ -35,46 +35,54 @@ const STEPS = [
   },
   {
     id: 28,
-    title: "Veneer preparation",
-    body: "Veneers are carefully dried to reduce moisture and prepare them for bonding.",
+    title: "Veneer Peeling",
+    body: "Debarked logs are precisely peeled into thin, uniform veneers, forming the foundation of our plywood.",
     imageUrl: "",
     sortOrder: 1,
   },
   {
     id: 29,
-    title: "Bonding",
-    body: "Imported adhesives create strong, lasting bonds between every veneer layer.",
+    title: "Veneer Preparation",
+    body: "Controlled drying removes excess moisture, preparing veneers for strong, consistent bonding.",
     imageUrl: "",
     sortOrder: 2,
   },
   {
     id: 30,
-    title: "Pressing & calibration",
-    body: "Heat pressing strengthens bonding, while precision calibration ensures uniform thickness.",
+    title: "Bonding",
+    body: "Imported adhesives create strong, lasting bonds between every veneer layer.",
     imageUrl: "",
     sortOrder: 3,
   },
   {
     id: 31,
-    title: "Preservation",
-    body: "Protective treatments enhance termite and fire resistance for lasting durability.",
+    title: "Pressing & calibration",
+    body: "Heat pressing strengthens bonding, while precision calibration ensures uniform thickness.",
     imageUrl: "",
     sortOrder: 4,
+  },
+  {
+    id: 32,
+    title: "Finishing",
+    body: "Precision sanding creates a smooth, uniform surface, ready for laminates, veneers or polish.",
+    imageUrl: "",
+    sortOrder: 5,
   },
 ].sort((a, b) => a.sortOrder - b.sortOrder);
 
 /** Background photo per scene: intro first, then one per stage (a stage's own imageUrl wins) */
 const SCENE_IMAGES = [
   { src: "/images/process/process-intro.jpg", alt: "Cross-section of a log showing its growth rings" },
-  { src: "/images/process/process-1.jpg", alt: "Timber workshop with benches and hand tools" },
-  { src: "/images/process/process-2.jpg", alt: "Timber logs stacked in a yard" },
-  { src: "/images/process/process-3.jpg", alt: "Loader stacking freshly cut logs" },
-  { src: "/images/process/process-4.jpg", alt: "Close-up of flowing wood grain" },
-  { src: "/images/process/process-5.jpg", alt: "Managed plantation forest" },
+  { src: "/images/process/process-1.png", alt: "Timber workshop with benches and hand tools" },
+  { src: "/images/process/process-2.png", alt: "Timber logs stacked in a yard" },
+  { src: "/images/process/process-3.png", alt: "Loader stacking freshly cut logs" },
+  { src: "/images/process/process-4.png", alt: "Close-up of flowing wood grain" },
+  { src: "/images/process/process-5.png", alt: "Managed plantation forest" },
+  { src: "/images/process/process-6.png", alt: "End grain of a large stack of logs" },
 ];
 
 const INTRO =
-  "Every XSpace sheet moves through the same five stages, from carefully sourced timber to precise pressing and treatment. Scroll through the journey.";
+  "Every XSpace sheet moves through the same six stages, from carefully sourced timber to precise pressing and treatment. Scroll through the journey.";
 
 const HOLD = 0.3; // timeline units the text rests, centred, before moving on
 const DUR = 0.7; // timeline units the text takes to scroll from one stage to the next
@@ -269,12 +277,10 @@ export function ProcessMain({ steps: _ignored }) {
               <div className="relative h-px w-full bg-white/20">
                 <div data-progress className="absolute inset-0 origin-left bg-white" style={{ transform: "scaleX(0)" }} />
               </div>
-              <ol
-                className="mt-3 hidden gap-4 text-[11px] uppercase tracking-[0.18em] text-white lg:grid"
-                style={{ gridTemplateColumns: `repeat(${steps.length}, minmax(0, 1fr))` }}
-              >
+              {/* labels spread edge to edge with equal gaps between them */}
+              <ol className="mt-3 hidden justify-between gap-6 text-[11px] uppercase tracking-[0.18em] text-white lg:flex">
                 {steps.map((s, i) => (
-                  <li key={s.id ?? i} data-step-label className="truncate opacity-45">
+                  <li key={s.id ?? i} data-step-label className="whitespace-nowrap opacity-45">
                     {pad(i + 1)} · {s.title}
                   </li>
                 ))}
