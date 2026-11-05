@@ -85,7 +85,7 @@ export function Header({ logoUrl, banner }) {
         )}
 
         <div
-          className="pointer-events-auto relative mx-auto flex items-center justify-between gap-4 rounded-full bg-white/75 pl-5 pr-1.5 text-ink sm:pl-6"
+          className="pointer-events-auto relative mx-auto flex items-center justify-between gap-4 rounded-full bg-black/75 pl-5 pr-1.5 text-white sm:pl-6"
           style={{ maxWidth: 920, height: 60 }}
         >
           {/* logo: centred vertically in the bar */}
