@@ -113,7 +113,7 @@ export function Header({ logoUrl, banner }) {
 
           <div className="relative flex items-center gap-1.5">
             <Link
-              href="/contact#quote"
+              href="https://wa.me/919686348614?text=Hello%20XSpace%2C%20I'd%20like%20to%20know%20more%20about%20your%20products"
               className={`btn ${overHero ? "btn-light" : "btn-primary"} hidden min-h-[46px]! rounded-full sm:inline-flex`}
             >
               Request a Quote
@@ -158,7 +158,7 @@ export function Header({ logoUrl, banner }) {
               </li>
             ))}
           </ul>
-          <Link href="/contact#quote" className="btn btn-primary mt-10 w-full rounded-full">
+          <Link href="https://wa.me/919686348614?text=Hello%20XSpace%2C%20I'd%20like%20to%20know%20more%20about%20your%20products" className="btn btn-primary mt-10 w-full rounded-full">
             Request a Quote
           </Link>
         </nav>

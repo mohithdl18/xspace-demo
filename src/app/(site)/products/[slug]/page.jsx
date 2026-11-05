@@ -117,10 +117,10 @@ export default async function ProductPage({ params }) {
               )}
 
               <div className="mt-10 flex flex-wrap gap-3">
-                <Link href={`/contact?product=${encodeURIComponent(p.name)}#quote`} className="btn btn-primary">
-                  Request a Quote <ArrowRight />
+                <Link href={`https://wa.me/919686348614?text=Hello%20XSpace%2C%20I'd%20like%20to%20know%20more%20about%20${encodeURIComponent(p.name)}`} className="btn btn-primary">
+                  Request a Quote <WhatsApp className="h-4 w-4" />
                 </Link>
-                {company.whatsapp && (
+                {/* {company.whatsapp && (
                   <a
                     className="btn btn-outline"
                     target="_blank"
@@ -132,7 +132,7 @@ export default async function ProductPage({ params }) {
                   >
                     <WhatsApp className="h-4 w-4" /> WhatsApp
                   </a>
-                )}
+                )} */}
                 {/* <CompareButton slug={p.slug} name={p.name} className="min-h-[48px]! px-5" /> */}
               </div>
               {!p.verified && (

@@ -81,7 +81,7 @@ export function ContactMain({ company, home, brochure }) {
                 </a>
               ) : (
                 <Link
-                  href="/contact?message=Please%20send%20me%20the%20XSpace%20product%20brochure.#quote"
+                  href="https://wa.me/919686348614?text=Hello%20XSpace%2C%20I'd%20like%20to%20know%20more%20about%20your%20products"
                   className="link-u mt-2 inline-flex items-center gap-2 text-sm font-medium"
                 >
                   Request the brochure <ArrowRight />
