@@ -104,16 +104,17 @@ export default function AboutPage() {
           </h2>
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" data-reveal-stagger>
             {VALUES.map((v) => (
-              <article
-                key={v.title}
-                className="group rounded-[24px] border border-ink/10 bg-ice p-7 transition-[transform,box-shadow] duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_24px_50px_-28px_rgba(17,17,17,0.35)] md:p-8"
-              >
-                <span className="mb-8 flex h-14 w-14 items-center justify-center rounded-full bg-walnut text-white transition-transform duration-500 ease-out group-hover:scale-105">
-                  <v.Icon className="h-6 w-6" />
-                </span>
-                <h3 className="text-[19px] font-medium">{v.title}</h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-ink/70">{v.body}</p>
-              </article>
+              // outer wrapper slides in on scroll; the card inside handles its own hover lift,
+              // so the two movements never fight and every card lands exactly on the grid
+              <div key={v.title} className="flex min-w-0">
+                <article className="group flex w-full flex-col rounded-[24px] border border-ink/10 bg-ice p-7 transition-[translate,box-shadow] duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_24px_50px_-28px_rgba(17,17,17,0.35)] md:p-8">
+                  <span className="mb-8 flex h-14 w-14 items-center justify-center rounded-full bg-walnut text-white transition-[scale] duration-500 ease-out group-hover:scale-105">
+                    <v.Icon className="h-6 w-6" />
+                  </span>
+                  <h3 className="text-[19px] font-medium">{v.title}</h3>
+                  <p className="mt-3 text-[15px] leading-relaxed text-ink/70">{v.body}</p>
+                </article>
+              </div>
             ))}
           </div>
           <div className="mt-16 flex flex-wrap gap-3" data-reveal>

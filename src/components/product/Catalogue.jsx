@@ -88,7 +88,7 @@ export function Catalogue({ products, categories, initial = EMPTY, syncUrl = fal
   );
   return (
     <div>
-      <div role="search" className="grid gap-4 border-y border-ink/10 py-6 md:grid-cols-[1.4fr_repeat(4,1fr)]">
+      {/* <div role="search" className="grid gap-4 border-y border-ink/10 py-6 md:grid-cols-[1.4fr_repeat(4,1fr)]">
         <div className="field">
           <label htmlFor="f-q">Search</label>
           <div className="relative">
@@ -127,7 +127,7 @@ export function Catalogue({ products, categories, initial = EMPTY, syncUrl = fal
             <Close className="h-4 w-4" /> Clear filters
           </button>
         )}
-      </div>
+      </div> */}
 
       {results.length ? (
         <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">

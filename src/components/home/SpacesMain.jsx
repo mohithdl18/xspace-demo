@@ -18,7 +18,12 @@ const EASE = "ease-[cubic-bezier(0.65,0,0.35,1)]";
  * Five rounded cards in one row. Each starts with an image on the top 60%
  * and its heading in the bottom 40%. On hover (or tap on touch screens, or
  * keyboard focus) the image collapses away, the heading rises to the top and
- * a short description plus the best-fit plywood appear at the bottom.
+ * the description appears under it, followed by the best-fit plywood and uses.
+ *
+ * Best-fit plywood comes from each application's "productSlugs" in
+ * src/data/applications.json. An entry can be a product slug (shown as a link
+ * to that product, e.g. "mr-eco-gold-grade") or any label (shown as a tag,
+ * e.g. "MR - 18mm").
  * On phones/tablets the row scrolls sideways.
  */
 export function SpacesMain({ apps, products }) {
@@ -40,7 +45,8 @@ export function SpacesMain({ apps, products }) {
         >
           {apps.map((a, i) => {
             const open = active === i;
-            const best = a.productSlugs.map((s) => bySlug[s]).filter(Boolean);
+            // product slug → link to the product; anything else (e.g. "MR - 18mm") → plain tag
+            const best = a.productSlugs.filter(Boolean).map((s) => bySlug[s] ?? { label: s });
             return (
               <li key={a.slug} className="w-[74%] shrink-0 snap-start sm:w-[42%] md:w-[34%] lg:w-auto">
                 <article
@@ -92,7 +98,8 @@ export function SpacesMain({ apps, products }) {
                     </div>
                   </div>
 
-                  {/* heading (rises to the top when the image collapses) + details */}
+                  {/* heading (rises to the top when the image collapses), then the description,
+                      uses and best-fit plywood directly beneath it */}
                   <div className="flex min-h-0 flex-1 flex-col p-5 xl:p-6">
                     <p
                       className={`text-[12px] font-semibold tracking-[0.2em] transition-colors duration-500 ${
@@ -106,33 +113,41 @@ export function SpacesMain({ apps, products }) {
                     </h3>
 
                     <div
-                      className={`mt-auto grid transition-[grid-template-rows,opacity] duration-700 ${EASE} ${
+                      className={`grid transition-[grid-template-rows,opacity] duration-700 ${EASE} ${
                         open ? "grid-rows-[1fr] opacity-100 delay-150" : "grid-rows-[0fr] opacity-0"
                       }`}
                     >
                       <div className="min-h-0 overflow-hidden">
-                        <p className="pt-4 text-[14px] leading-relaxed text-white/85 xl:text-[15px]">{a.summary}</p>
-                        {a.uses.length > 0 && (
-                          <p className="mt-3 text-[12px] leading-relaxed text-white/60">{a.uses.join(" · ")}</p>
-                        )}
+                        <p className="pt-3 text-[14px] leading-relaxed text-white/85 xl:text-[15px]">{a.summary}</p>
                         {best.length > 0 && (
-                          <div className="mt-5 border-t border-white/20 pt-4">
+                          <div className="mt-4">
                             <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/60">Best fit plywood</p>
-                            <ul className="mt-3 flex flex-wrap gap-2">
+                            <ul className="mt-2.5 flex flex-wrap gap-2">
                               {best.map((p) => (
-                                <li key={p.slug}>
-                                  <Link
-                                    href={`/products/${p.slug}`}
-                                    tabIndex={open ? 0 : -1}
-                                    className="inline-flex min-h-[34px] items-center gap-2 rounded-full bg-white/12 px-3 text-[12px] font-medium text-white transition-colors hover:bg-white hover:text-walnut"
-                                  >
-                                    {p.grade && <span className="font-semibold">{p.grade}</span>}
-                                    <span>{p.name}</span>
-                                  </Link>
+                                <li key={p.slug ?? p.label}>
+                                  {p.slug ? (
+                                    <Link
+                                      href={`/products/${p.slug}`}
+                                      tabIndex={open ? 0 : -1}
+                                      className="inline-flex min-h-[34px] items-center gap-2 rounded-full bg-white/12 px-3 text-[12px] font-medium text-white transition-colors hover:bg-white hover:text-walnut"
+                                    >
+                                      {p.grade && <span className="font-semibold">{p.grade}</span>}
+                                      <span>{p.name}</span>
+                                    </Link>
+                                  ) : (
+                                    <span className="inline-flex min-h-[34px] items-center rounded-full bg-white/12 px-3 text-[12px] font-semibold text-white">
+                                      {p.label}
+                                    </span>
+                                  )}
                                 </li>
                               ))}
                             </ul>
                           </div>
+                        )}
+                        {a.uses.length > 0 && (
+                          <p className="mt-4 border-t border-white/20 pt-4 text-[12px] leading-relaxed text-white/60">
+                            {a.uses.join(" · ")}
+                          </p>
                         )}
                       </div>
                     </div>

@@ -45,14 +45,18 @@ export function AboutMain({ company, home, years, categoryCount }) {
           <p className="mt-6 text-[17px] leading-relaxed text-ink/70" data-reveal>
             {home.introBody}
           </p>
-          <dl className="mt-12 grid grid-cols-2 gap-8 border-t border-ink/10 pt-8" data-reveal-stagger>
+          <dl className="mt-12 grid grid-cols-3 gap-8 border-t border-ink/10 pt-8" data-reveal-stagger>
             <div>
               <dt className="text-[13px] text-ink/55">Years of heritage</dt>
               <dd className="mt-2 text-h2 font-medium">{years}+</dd>
             </div>
             <div>
+              <dt className="text-[13px] text-ink/55">Happy customers</dt>
+              <dd className="mt-2 text-h2 font-medium">10K+</dd>
+            </div>
+            <div>
               <dt className="text-[13px] text-ink/55">Product categories</dt>
-              <dd className="mt-2 text-h2 font-medium">{categoryCount}</dd>
+              <dd className="mt-2 text-h2 font-medium">3</dd>
             </div>
           </dl>
           <Link href="/about" className="link-u mt-10 inline-flex items-center gap-2 text-sm font-medium" data-reveal>

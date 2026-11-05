@@ -64,13 +64,13 @@ export function Hero({ eyebrow, headline, copy, imageUrl }) {
       />
 
       {/* architectural grid lines */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+      {/* <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="frame grid h-full grid-cols-4 md:grid-cols-12">
           {Array.from({ length: 12 }).map((_, i) => (
             <div key={i} className={`border-l border-white/[0.07] ${i >= 4 ? "hidden md:block" : ""}`} />
           ))}
         </div>
-      </div>
+      </div> */}
 
       <div className="hero-content frame relative">
         <div className="min-w-0 max-w-4xl">
@@ -111,7 +111,7 @@ export function Hero({ eyebrow, headline, copy, imageUrl }) {
             </div>
             <div>
               <dt className="text-white/60">Grades</dt>
-              <dd className="mt-1 font-medium">MR · BWP · FR</dd>
+              <dd className="mt-1 font-medium">MR · BWP · BWR</dd>
             </div>
             <div>
               <dt className="text-white/60">Made in</dt>

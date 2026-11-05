@@ -2,15 +2,15 @@
   {
     "id": 21,
     "question": "Which plywood grades does XSpace offer?",
-    "answer": "The plywood range includes MR Eco & Gold Grade, MR Value – Accurate 16mm, BWP Elite & Prime 710 and Fireguard FR Ply. Each grade is designed for different conditions, from dry interiors to fire-sensitive public spaces.",
+    "answer": "XSpace offers three plywood grades: MR, BWR and BWP, suited to different interior applications and moisture conditions.",
     "topic": "Products",
     "published": true,
     "sortOrder": 0
   },
   {
     "id": 22,
-    "question": "What do MR, BWP and FR mean?",
-    "answer": "MR stands for Moisture Resistant, BWP for Boiling Water Proof and FR for Fire Retardant. Tell us where the material will be used and our team will recommend the right grade.",
+    "question": "What do MR, BWP and BWR mean?",
+    "answer": "MR stands for Moisture Resistant, BWR for Boiling Water Resistant, and BWP for Boiling Water Proof. Choose MR for dry interiors, BWR for occasional moisture exposure, and BWP for wet-area cabinetry.",
     "topic": "Products",
     "published": true,
     "sortOrder": 1
@@ -18,7 +18,7 @@
   {
     "id": 23,
     "question": "Which thicknesses are available?",
-    "answer": "MR Eco & Gold Grade, BWR Grade and BWP Elite & Prime 710 are available in 6, 8, 12, 18, 25, 30 and 60mm. Fireguard FR Ply is listed in 12, 16, 19 and 25mm. MR Value – Accurate 16mm is a true 16mm board. For other products, please ask for current availability.",
+    "answer": "Our listed thicknesses include 6, 8, 12, 18, 25, 30 and 60 mm. Contact our team to confirm availability in your preferred grade and select the right thickness for your application.",
     "topic": "Products",
     "published": true,
     "sortOrder": 2

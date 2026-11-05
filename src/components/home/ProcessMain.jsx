@@ -12,18 +12,58 @@ gsap.registerPlugin(ScrollTrigger);
  * Home — manufacturing journey.
  *
  * One full-screen stage that docks under the header and stays put while you
- * scroll through 7 scenes (intro + 6 stages):
+ * scroll through 6 scenes (intro + 5 stages):
  *   • the photo stays still;
  *   • scrolling moves only the text — the current text travels up and out
  *     while the next stage's text rises from below;
  *   • once the incoming text reaches the middle of the screen, the photo
  *     crossfades to the next one.
  *
- * Without JavaScript, the same 7 scenes simply stack as full-screen blocks —
+ * Without JavaScript, the same 6 scenes simply stack as full-screen blocks —
  * identical total height, all content readable.
  *
  * Background photos: replace the files in /public/images/process/ to change them.
  */
+/** The five manufacturing stages (edit here to change the copy) */
+const STEPS = [
+  {
+    id: 27,
+    title: "Responsible timber",
+    body: "Responsibly sourced timber, carefully debarked and peeled into veneers.",
+    imageUrl: "",
+    sortOrder: 0,
+  },
+  {
+    id: 28,
+    title: "Veneer preparation",
+    body: "Veneers are carefully dried to reduce moisture and prepare them for bonding.",
+    imageUrl: "",
+    sortOrder: 1,
+  },
+  {
+    id: 29,
+    title: "Bonding",
+    body: "Imported adhesives create strong, lasting bonds between every veneer layer.",
+    imageUrl: "",
+    sortOrder: 2,
+  },
+  {
+    id: 30,
+    title: "Pressing & calibration",
+    body: "Heat pressing strengthens bonding, while precision calibration ensures uniform thickness.",
+    imageUrl: "",
+    sortOrder: 3,
+  },
+  {
+    id: 31,
+    title: "Preservation",
+    body: "Protective treatments enhance termite and fire resistance for lasting durability.",
+    imageUrl: "",
+    sortOrder: 4,
+  },
+].sort((a, b) => a.sortOrder - b.sortOrder);
+
+/** Background photo per scene: intro first, then one per stage (a stage's own imageUrl wins) */
 const SCENE_IMAGES = [
   { src: "/images/process/process-intro.jpg", alt: "Cross-section of a log showing its growth rings" },
   { src: "/images/process/process-1.jpg", alt: "Timber workshop with benches and hand tools" },
@@ -31,11 +71,10 @@ const SCENE_IMAGES = [
   { src: "/images/process/process-3.jpg", alt: "Loader stacking freshly cut logs" },
   { src: "/images/process/process-4.jpg", alt: "Close-up of flowing wood grain" },
   { src: "/images/process/process-5.jpg", alt: "Managed plantation forest" },
-  { src: "/images/process/process-6.jpg", alt: "End grain of a large stack of logs" },
 ];
 
 const INTRO =
-  "Every XSpace sheet moves through the same six stages, from carefully sourced timber to precise pressing and treatment. Scroll through the journey.";
+  "Every XSpace sheet moves through the same five stages, from carefully sourced timber to precise pressing and treatment. Scroll through the journey.";
 
 const HOLD = 0.3; // timeline units the text rests, centred, before moving on
 const DUR = 0.7; // timeline units the text takes to scroll from one stage to the next
@@ -46,7 +85,9 @@ const pad = (n) => String(n).padStart(2, "0");
 
 /** Background photo + readability gradient for one scene */
 function Photo({ i }) {
-  const img = SCENE_IMAGES[i] ?? SCENE_IMAGES[SCENE_IMAGES.length - 1];
+  const fallback = SCENE_IMAGES[i] ?? SCENE_IMAGES[SCENE_IMAGES.length - 1];
+  const own = i > 0 ? STEPS[i - 1]?.imageUrl : "";
+  const img = own ? { src: own, alt: STEPS[i - 1].title } : fallback;
   return (
     <>
       <div data-kb className="absolute inset-0">
@@ -100,7 +141,10 @@ function Copy({ i, step }) {
   );
 }
 
-export function ProcessMain({ steps }) {
+// `steps` from the page is ignored — the stages are defined in STEPS above
+// eslint-disable-next-line no-unused-vars
+export function ProcessMain({ steps: _ignored }) {
+  const steps = STEPS;
   const root = useRef(null);
   const stage = useRef(null);
   const [pinned, setPinned] = useState(false);
@@ -225,7 +269,10 @@ export function ProcessMain({ steps }) {
               <div className="relative h-px w-full bg-white/20">
                 <div data-progress className="absolute inset-0 origin-left bg-white" style={{ transform: "scaleX(0)" }} />
               </div>
-              <ol className="mt-3 hidden grid-cols-6 gap-4 text-[11px] uppercase tracking-[0.18em] text-white lg:grid">
+              <ol
+                className="mt-3 hidden gap-4 text-[11px] uppercase tracking-[0.18em] text-white lg:grid"
+                style={{ gridTemplateColumns: `repeat(${steps.length}, minmax(0, 1fr))` }}
+              >
                 {steps.map((s, i) => (
                   <li key={s.id ?? i} data-step-label className="truncate opacity-45">
                     {pad(i + 1)} · {s.title}

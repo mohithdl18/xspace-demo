@@ -3,14 +3,14 @@
     "id": 33,
     "slug": "interiors",
     "name": "Home interiors",
-    "summary": "Walls, ceilings and the quiet structure behind finished rooms.",
+    "summary": "Versatile plywood for comfortable, beautifully finished everyday living spaces.",
     "uses": [
-      "Partitions & paneling",
-      "False ceilings",
-      "Interior décor"
+      "Wardrobes ",
+      "TV units",
+      "Bedroom cabinetry"
     ],
     "productSlugs": [
-      "mr-eco-gold-grade"
+      "MR - 18mm"
     ],
     "imageUrl": "",
     "imageIsInspiration": true,
@@ -20,14 +20,14 @@
     "id": 34,
     "slug": "furniture-kitchens",
     "name": "Furniture & kitchens",
-    "summary": "Carcasses and cabinetry that need stable, screw-holding boards.",
+    "summary": "Strong, moisture-ready plywood for furniture and demanding kitchen environments.",
     "uses": [
-      "Furniture carcasses",
-      "Modular kitchens",
-      "Cabinet carcasses"
+      "Kitchen cabinets",
+      "Sink units",
+      "Dining furniture"
     ],
     "productSlugs": [
-      "mr-eco-gold-grade"
+      "BWP/BWR — 18–19 mm"
     ],
     "imageUrl": "",
     "imageIsInspiration": true,
@@ -37,15 +37,14 @@
     "id": 35,
     "slug": "commercial-public",
     "name": "Commercial & public spaces",
-    "summary": "Fire-sensitive environments where safety is specified first.",
+    "summary": "Dependable plywood for functional furniture in busy commercial interiors.",
     "uses": [
-      "Auditoriums",
-      "Transit terminals",
-      "High-rise lobbies",
-      "Data centres"
+      "Office desks",
+      "Reception counters",
+      "Retail cabinetry"
     ],
     "productSlugs": [
-      "fireguard-fr-ply"
+      "BWR — 18–19 mm"
     ],
     "imageUrl": "",
     "imageIsInspiration": true,
@@ -55,14 +54,14 @@
     "id": 36,
     "slug": "industrial-transport",
     "name": "Industrial & transport",
-    "summary": "Precision boards for production lines, vehicles and vessels.",
+    "summary": "Durable plywood for utility cabinetry and vehicle interior fit-outs.",
     "uses": [
-      "Laminate pressing lines",
-      "Vehicle flooring",
-      "Ship building"
+      "Vehicle cabinets",
+      "Interior partitions",
+      "Utility storage"
     ],
     "productSlugs": [
-      "mr-value-accurate-16mm"
+      "BWP — 18–19 mm"
     ],
     "imageUrl": "",
     "imageIsInspiration": true,
@@ -72,12 +71,14 @@
     "id": 37,
     "slug": "specialist",
     "name": "Specialist craft",
-    "summary": "Where tone, stability and finish all matter.",
+    "summary": "Lightweight plywood for detailed designs and creative indoor applications.",
     "uses": [
-      "Musical instruments"
+      "Decorative cut-outs",
+      "Scale models",
+      "Display props"
     ],
     "productSlugs": [
-      "mr-eco-gold-grade"
+      "MR — 4–6 mm "
     ],
     "imageUrl": "",
     "imageIsInspiration": true,
