@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { PageIntro } from "@/components/ui/PageIntro";
-import { PlyStack } from "@/components/product/Ply";
-import { ArrowRight } from "@/components/ui/Icon";
-import { grainUrl } from "@/lib/grain";
+import Image from "next/image";
+import { ArrowRight, Caliper, Handshake, Leaf, Shield } from "@/components/ui/Icon";
 import { getCompany, getHome } from "@/lib/queries";
 import { pageMetadata } from "@/lib/seo";
 import { SplitWords } from "@/components/ui/SplitWords";
@@ -15,11 +14,12 @@ export function generateMetadata() {
 const VALUES = [
   {
     title: "Responsible sourcing",
+    Icon: Leaf,
     body: "Timber from agroforestry plantations with strict traceability, alongside carefully selected raw materials.",
   },
-  { title: "Precision", body: "Calibrated veneers and cores — down to ±0.2mm on MR Value – Accurate 16mm." },
-  { title: "Protection", body: "Termite, borer, moisture and fire protection matched to the grade that needs it." },
-  { title: "Trust", body: "A heritage that began in 1959, and a team you can call directly." },
+  { title: "Precision", Icon: Caliper, body: "Calibrated veneers and cores — down to ±0.2mm on MR Value – Accurate 16mm." },
+  { title: "Protection", Icon: Shield, body: "Termite, borer, moisture and fire protection matched to the grade that needs it." },
+  { title: "Trust", Icon: Handshake, body: "A heritage that began in 1959, and a team you can call directly." },
 ];
 export default function AboutPage() {
   const c = getCompany();
@@ -30,20 +30,22 @@ export default function AboutPage() {
         eyebrow="About"
         title={`Powered by ${c.poweredBy}. Trusted since ${c.foundedYear}.`}
         intro={home.introBody}
-        tone="walnut"
+        panel={false}
       />
 
       <section className="section rule">
         <div className="frame grid items-center gap-16 lg:grid-cols-12">
           <div
-            className="relative flex h-[320px] min-w-0 items-center justify-center overflow-hidden bg-ice sm:h-[460px] lg:col-span-6"
+            className="relative h-[320px] min-w-0 overflow-hidden rounded-[24px] bg-ice sm:h-[460px] lg:col-span-6"
             data-reveal-img
-            aria-hidden="true"
           >
-            <span className="placeholder-tag">Illustrative render</span>
-            <div className="shrink-0 scale-[0.6] sm:scale-90" data-reveal-scale>
-              <PlyStack tone="walnut" count={5} size={320} thickness={18} />
-            </div>
+            <Image
+              src="/images/about/about-story.jpg"
+              alt="Cross-section of a timber log showing its growth rings"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
           </div>
           <div className="lg:col-span-5 lg:col-start-8">
             <p className="eyebrow" data-reveal>
@@ -100,17 +102,15 @@ export default function AboutPage() {
           <h2 id="values-title" className="mt-5 max-w-2xl text-h2" data-split>
             <SplitWords>Quality you can specify, not just hear about.</SplitWords>
           </h2>
-          <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4" data-reveal-stagger>
-            {VALUES.map((v, i) => (
-              <article key={v.title} className="border-t border-ink pt-6">
-                <div
-                  className="mb-6 h-16 w-16"
-                  style={{
-                    backgroundImage: grainUrl(["birch", "oak", "walnut", "ember"][i], i + 4),
-                    backgroundSize: "cover",
-                  }}
-                  aria-hidden="true"
-                />
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" data-reveal-stagger>
+            {VALUES.map((v) => (
+              <article
+                key={v.title}
+                className="group rounded-[24px] border border-ink/10 bg-ice p-7 transition-[transform,box-shadow] duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_24px_50px_-28px_rgba(17,17,17,0.35)] md:p-8"
+              >
+                <span className="mb-8 flex h-14 w-14 items-center justify-center rounded-full bg-walnut text-white transition-transform duration-500 ease-out group-hover:scale-105">
+                  <v.Icon className="h-6 w-6" />
+                </span>
                 <h3 className="text-[19px] font-medium">{v.title}</h3>
                 <p className="mt-3 text-[15px] leading-relaxed text-ink/70">{v.body}</p>
               </article>
