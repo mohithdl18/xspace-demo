@@ -15,8 +15,8 @@ import { Phone, Mail } from "@/components/ui/Icon";
  *   (Entries in company.json "social" — e.g. { "platform": "instagram", "url": "…" } — override them.)
  */
 const SOCIAL_LINKS = {
-  instagram: "https://www.instagram.com/",
-  facebook: "https://www.facebook.com/",
+  instagram: "https://www.instagram.com/thexspaceply",
+  facebook: "https://www.facebook.com/share/1HT8ZvbhNS/",
 };
 
 const InstagramIcon = ({ className = "h-4 w-4" }) => (

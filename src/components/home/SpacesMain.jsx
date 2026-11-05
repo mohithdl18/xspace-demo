@@ -26,6 +26,15 @@ const EASE = "ease-[cubic-bezier(0.65,0,0.35,1)]";
  * e.g. "MR - 18mm").
  * On phones/tablets the row scrolls sideways.
  */
+/** Card photos by application slug (an `imageUrl` in applications.json overrides these) */
+const IMAGES = {
+  interiors: "/images/applications/interiors.jpg",
+  "furniture-kitchens": "/images/applications/furniture-kitchens.jpg",
+  "commercial-public": "/images/applications/commercial-public.jpg",
+  "industrial-transport": "/images/applications/industrial-transport.jpg",
+  specialist: "/images/applications/specialist.jpg",
+};
+
 export function SpacesMain({ apps, products }) {
   const [active, setActive] = useState(-1);
   const pressing = useRef(false);
@@ -85,8 +94,14 @@ export function SpacesMain({ apps, products }) {
                     <div
                       className={`absolute inset-0 transition-transform duration-700 ${EASE} ${open ? "scale-110" : "scale-100"}`}
                     >
-                      {a.imageUrl ? (
-                        <Image src={a.imageUrl} alt="" fill sizes="(min-width:1024px) 20vw, 70vw" className="object-cover" />
+                      {a.imageUrl || IMAGES[a.slug] ? (
+                        <Image
+                          src={a.imageUrl || IMAGES[a.slug]}
+                          alt=""
+                          fill
+                          sizes="(min-width:1024px) 20vw, 70vw"
+                          className="object-cover"
+                        />
                       ) : (
                         <div
                           className="absolute inset-0"
