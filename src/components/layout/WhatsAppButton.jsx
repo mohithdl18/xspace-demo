@@ -29,7 +29,7 @@ export function WhatsAppButton({ number, productNames }) {
       {/* soft ring that pulses gently behind the button */}
       <span
         aria-hidden="true"
-        className="absolute inset-0 rounded-full bg-[#1F7A4D] opacity-40 motion-safe:animate-[wa-pulse_2.8s_ease-out_infinite]"
+        className="absolute inset-0 rounded-full bg-[#1F7A4D] opacity-40 animate-[wa-pulse_2.8s_ease-out_infinite]"
       />
       <WhatsApp className="relative h-7 w-7 md:h-8 md:w-8" />
 

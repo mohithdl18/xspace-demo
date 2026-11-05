@@ -6,19 +6,43 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 /**
- * Site-wide declarative motion. Content is fully visible without JS; animations
- * are only attached when the visitor allows motion.
+ * Site-wide declarative motion. Content is fully visible without JS.
+ * Motion always plays (the device's reduce-motion setting is not applied —
+ * the site is designed to be felt in motion).
  *
- *   data-reveal              fade + rise when scrolled into view
- *   data-reveal-stagger      children animate in sequence
- *   data-split               heading words slide up out of masks (use <SplitWords>)
- *   data-reveal-img          visual wipes open from the bottom (="down" wipes from the top);
+ * Things slide in from the side they sit on: left-hand content comes in from
+ * the left, right-hand content from the right.
+ *
+ *   data-reveal              slide in from its side + fade, when scrolled into view
+ *   data-reveal-stagger      children slide in one after another, each from its own side
+ *   data-split               heading drifts in from its side while words rise out of masks
+ *                            (use <SplitWords>)
+ *   data-reveal-img          visual wipes open from its side (="down" wipes from the top);
  *                            a photo inside, or any [data-reveal-scale] child, settles from a zoom
  *   data-parallax="0.15"     gentle scroll-linked drift of the element (desktop only)
  *   data-parallax-img        the photo inside drifts within its frame (desktop only)
  *   data-parallax-bg="140"   wood-grain background texture drifts by N px (desktop only)
  *   <details> in the page    open and close with a smooth height animation
+ *
+ * Automatic: any heading, paragraph, list, form or table in <main> that isn't
+ * already covered above also slides in. Opt a block out with
+ * data-no-auto-reveal (on it or any ancestor).
  */
+
+// already animated by their own attributes / components
+const COVERED =
+  "[data-reveal], [data-reveal-stagger], [data-split], [data-reveal-img], [data-hero], [data-no-auto-reveal], #process, details > :not(summary), nav, [aria-hidden='true']";
+const AUTO = "h1, h2, h3, h4, p, dl, ul, ol, form, table, blockquote";
+
+/** -1 = comes in from the left, 1 = from the right */
+function sideOf(el) {
+  const r = el.getBoundingClientRect();
+  const vw = window.innerWidth;
+  if (!r.width) return -1;
+  return r.left > vw * 0.42 ? 1 : -1;
+}
+const shift = () => (window.innerWidth >= 1024 ? 70 : 32);
+
 export function Motion() {
   const pathname = usePathname();
 
@@ -27,85 +51,89 @@ export function Motion() {
     const mm = gsap.matchMedia();
 
     const id = requestAnimationFrame(() => {
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
-        // ── Fade + rise ────────────────────────────────────────────────────
-        gsap.utils.toArray("[data-reveal]").forEach((el) => {
+      mm.add("all", () => {
+        const d = shift();
+
+        // ── Slide in from the side ─────────────────────────────────────────
+        const slideIn = (el, trigger = el, extra = {}) =>
           gsap.from(el, {
-            y: 32,
+            x: sideOf(el) * d,
             opacity: 0, // opacity, not autoAlpha: hidden elements can't receive keyboard focus
-            duration: 1,
+            duration: 1.25,
             ease: "power3.out",
-            scrollTrigger: { trigger: el, start: "top 88%", once: true },
+            scrollTrigger: { trigger, start: "top 88%", once: true },
+            ...extra,
           });
-        });
+
+        gsap.utils.toArray("[data-reveal]").forEach((el) => slideIn(el));
+
         gsap.utils.toArray("[data-reveal-stagger]").forEach((el) => {
-          gsap.from(el.children, {
-            y: 28,
+          const kids = Array.from(el.children);
+          if (!kids.length) return;
+          gsap.from(kids, {
+            x: (i) => sideOf(kids[i]) * d,
             opacity: 0,
-            duration: 0.9,
+            duration: 1.15,
             ease: "power3.out",
-            stagger: 0.08,
+            stagger: 0.1,
             scrollTrigger: { trigger: el, start: "top 86%", once: true },
           });
         });
 
-        // ── Headlines: words slide up out of their masks ──────────────────
+        // ── Headlines: drift in from the side while words rise ─────────────
         gsap.utils.toArray("[data-split]").forEach((el) => {
           const words = el.querySelectorAll(".split-word");
-          if (!words.length) return;
-          gsap.from(words, {
-            yPercent: 110,
-            duration: 1.1,
-            ease: "power4.out",
-            stagger: 0.06,
-            scrollTrigger: { trigger: el, start: "top 90%", once: true },
-          });
+          const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: "top 90%", once: true } });
+          tl.from(el, { x: sideOf(el) * d * 0.7, opacity: 0, duration: 1.3, ease: "power3.out" }, 0);
+          if (words.length) tl.from(words, { yPercent: 110, duration: 1.1, ease: "power4.out", stagger: 0.06 }, 0);
         });
 
-        // ── Visuals: clip-path wipe, with the contents settling from a zoom ─
+        // ── Visuals: clip-path wipe from their side, contents settle from a zoom
         gsap.utils.toArray("[data-reveal-img]").forEach((el) => {
           const fromTop = el.dataset.revealImg === "down";
+          const side = sideOf(el);
+          const from = fromTop
+            ? "inset(0% 0% 100% 0%)"
+            : side < 0
+              ? "inset(0% 100% 0% 0%)"
+              : "inset(0% 0% 0% 100%)";
           const inner = el.querySelectorAll(":scope img, :scope [data-reveal-scale]");
           const parallaxing = el.hasAttribute("data-parallax-img") && window.innerWidth >= 1024;
           const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: "top 88%", once: true } });
           tl.fromTo(
             el,
-            { clipPath: fromTop ? "inset(0% 0% 100% 0%)" : "inset(100% 0% 0% 0%)" },
-            { clipPath: "inset(0% 0% 0% 0%)", duration: 1.4, ease: "power4.inOut", clearProps: "clipPath" },
+            { clipPath: from },
+            { clipPath: "inset(0% 0% 0% 0%)", duration: 1.5, ease: "power4.inOut", clearProps: "clipPath" },
           );
           if (inner.length) {
             tl.fromTo(
               inner,
               { scale: 1.18 },
               // keep a little headroom when the photo also parallaxes, so edges never show
-              { scale: parallaxing ? 1.1 : 1, duration: 1.8, ease: "power3.out" },
+              { scale: parallaxing ? 1.1 : 1, duration: 1.9, ease: "power3.out" },
               0,
             );
           }
         });
-      });
 
-      // Reduced motion: text and visuals still reveal on scroll, as a soft fade
-      // that comes into focus (no sliding, zooming or wiping).
-      mm.add("(prefers-reduced-motion: reduce)", () => {
-        const soft = (targets, trigger, extra = {}) =>
-          gsap.from(targets, {
-            opacity: 0,
-            filter: "blur(8px)",
-            duration: 1.1,
-            ease: "power2.out",
-            clearProps: "filter",
-            scrollTrigger: { trigger, start: "top 90%", once: true },
-            ...extra,
+        // ── Everything else in the page: slide in from its side ────────────
+        const picked = [];
+        document.querySelectorAll("main").forEach((main) => {
+          main.querySelectorAll(AUTO).forEach((el) => {
+            if (el.closest(COVERED)) return;
+            if (picked.some((p) => p.contains(el))) return; // its block already animates
+            picked.push(el);
           });
-        gsap.utils.toArray("[data-reveal], [data-split]").forEach((el) => soft(el, el));
-        gsap.utils.toArray("[data-reveal-stagger]").forEach((el) => soft(el.children, el, { stagger: 0.12 }));
-        gsap.utils.toArray("[data-reveal-img]").forEach((el) =>
-          soft(el, el, { filter: "none", duration: 1.3 }),
+        });
+        picked.forEach((el) => slideIn(el, el, { duration: 1.15 }));
+
+        // ── Footer: its two columns come in from either side ───────────────
+        gsap.utils.toArray("[data-footer-col]").forEach((el) =>
+          slideIn(el, el.closest("footer"), { scrollTrigger: { trigger: el.closest("footer"), start: "top 85%", once: true } }),
         );
       });
 
-      mm.add("(prefers-reduced-motion: no-preference) and (min-width: 1024px)", () => {
+      mm.add("(min-width: 1024px)", () => {
         gsap.utils.toArray("[data-parallax]").forEach((el) => {
           const amt = parseFloat(el.dataset.parallax || "0.12");
           gsap.fromTo(
@@ -151,7 +179,7 @@ export function Motion() {
       });
 
       // ── Accordions: smooth open/close for every <details> on the page ────
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
+      mm.add("all", () => {
         const offs = [];
         document.querySelectorAll("main details").forEach((d) => {
           const summary = d.querySelector(":scope > summary");

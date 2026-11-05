@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { Motion } from "@/components/motion/Motion";
+import { SawCursor } from "@/components/layout/SawCursor";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { PageTransition } from "@/components/motion/PageTransition";
 import { CompareProvider } from "@/components/product/CompareContext";
@@ -52,6 +53,7 @@ export default function SiteLayout({ children }) {
       <SmoothScroll />
       <PageTransition />
       <Motion />
+      <SawCursor />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} />
     </CompareProvider>
   );

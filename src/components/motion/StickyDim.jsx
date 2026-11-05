@@ -26,7 +26,7 @@ export function StickyDim({ max = 0.18, color = "#111111", cover }) {
       ? { trigger: coverEl, start: "top bottom", end: "top top", scrub: true }
       : { trigger: section, start: "top top", end: "bottom top", scrub: true };
     const mm = gsap.matchMedia();
-    mm.add("(prefers-reduced-motion: no-preference)", () => {
+    mm.add("all", () => {
       gsap.fromTo(el, { opacity: 0 }, { opacity: max, ease: "none", scrollTrigger });
     });
     return () => mm.revert();

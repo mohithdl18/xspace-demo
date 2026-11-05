@@ -18,7 +18,7 @@ export function Footer({ company }) {
       className="on-dark relative z-30 flex min-h-[50svh] flex-col overflow-hidden rounded-t-[28px] bg-ink text-white shadow-[0_-28px_60px_-18px_rgba(17,17,17,0.45)] md:rounded-t-[44px]"
     >
       <div className="frame flex flex-col gap-6 pt-9 md:flex-row md:items-start md:justify-between md:gap-12 md:pt-10">
-        <div className="max-w-md">
+        <div data-footer-col className="max-w-md">
           <Logo inverted logoUrl={company.logoUrl} imgClassName="h-12 w-auto md:h-14" />
           <p className="mt-4 text-[14px] leading-relaxed text-white/65 md:text-[15px]">
             {company.tagline} Plywood and interior materials from Hassan, Karnataka — powered by {company.poweredBy},
@@ -26,7 +26,7 @@ export function Footer({ company }) {
           </p>
         </div>
 
-        <div className="space-y-2.5 text-[15px] md:text-right md:text-[16px]">
+        <div data-footer-col className="space-y-2.5 text-[15px] md:text-right md:text-[16px]">
           <p className="flex flex-wrap items-center gap-x-3 gap-y-1 md:justify-end">
             <Phone className="h-4 w-4 shrink-0 text-sky" />
             <span className="sr-only">Phone:</span>

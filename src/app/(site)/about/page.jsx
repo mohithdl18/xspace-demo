@@ -74,7 +74,7 @@ export default function AboutPage() {
           <h2 id="timeline-title" className="mt-5 text-h2" data-split>
             <SplitWords>Six decades, one direction.</SplitWords>
           </h2>
-          <ol className="mt-14 grid gap-px bg-ink/10 md:grid-cols-2" data-reveal-stagger>
+          <ol className="mt-14 grid divide-y divide-ink/10 border-y border-ink/10 md:grid-cols-2 md:divide-x md:divide-y-0" data-reveal-stagger>
             <li className="bg-ice p-8 md:p-12">
               <p className="text-h1 font-medium text-walnut">{c.foundedYear}</p>
               <p className="mt-4 text-[17px] font-medium">The heritage begins</p>

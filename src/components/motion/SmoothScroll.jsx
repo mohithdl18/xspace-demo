@@ -9,19 +9,22 @@ import { setLenis } from "@/lib/lenis";
 gsap.registerPlugin(ScrollTrigger);
 
 /**
- * Lenis smooth scrolling, driven by GSAP's ticker so ScrollTrigger (reveals,
- * pinned exploded-ply and manufacturing sequences) stays perfectly in sync.
- * Not started at all when the visitor prefers reduced motion — native
- * scrolling is used instead. Touch devices keep native momentum scrolling.
+ * Lenis smooth scrolling, driven by GSAP's ticker so ScrollTrigger stays in sync.
+ *
+ *  • wheelMultiplier 0.5 — every wheel notch travels half as far
+ *    (two scrolls = one ordinary scroll), so the page feels slower and heavier
+ *  • lerp 0.06 — each scroll glides out softly instead of stopping dead
+ *
+ * Always on (the reduce-motion setting is not applied). Touch devices keep
+ * their native momentum scrolling.
  */
 export function SmoothScroll() {
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
     const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.06,
+      wheelMultiplier: 0.5,
       smoothWheel: true,
+      respectReducedMotion: false,
       syncTouch: false,
       // Same-page anchor links (e.g. "#quote") scroll through Lenis, offset for the fixed header
       anchors: { offset: -92 },

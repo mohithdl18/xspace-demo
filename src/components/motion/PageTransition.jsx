@@ -37,7 +37,7 @@ export function PageTransition() {
       }
       if (url.origin !== window.location.origin) return;
       if (url.pathname === window.location.pathname) return; // same page: anchors, query filters
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !panel.current) return;
+      if (!panel.current) return;
 
       // Stop next/link's own handler; we navigate after the wipe instead.
       e.preventDefault();

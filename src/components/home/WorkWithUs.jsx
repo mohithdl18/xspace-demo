@@ -16,8 +16,6 @@ import { ArrowRight } from "@/components/ui/Icon";
  *   • scrolling nudges them again (strongest when you change speed);
  *   • moving the mouse across a card pushes it in that direction.
  * Each string length has its own natural rhythm, so they never move in lockstep.
- * With the device's reduced-motion setting on, swings are capped at 10° and
- * there is no idle sway.
  */
 const PATHWAYS = [
   {
@@ -63,8 +61,7 @@ export function WorkWithUs() {
     const items = swings.current.filter(Boolean);
     if (!el || !items.length) return;
 
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const MAX = reduce ? 10 : 30;
+    const MAX = 30;
     state.current = PATHWAYS.map((p, i) => ({
       th: 0, // angle (deg)
       w: 0, // angular velocity (deg/s)
@@ -109,10 +106,10 @@ export function WorkWithUs() {
       const a = (v - lastV) / dt;
       lastY = y;
       lastV = v;
-      const scrollForce = Math.max(-500, Math.min(500, -a * 0.035)) * (reduce ? 0.3 : 1);
+      const scrollForce = Math.max(-500, Math.min(500, -a * 0.035));
 
       state.current.forEach((s, i) => {
-        const idle = reduce ? 0 : IDLE * Math.sin((t * 2 * Math.PI) / (s.period * 1.9) + s.phase);
+        const idle = IDLE * Math.sin((t * 2 * Math.PI) / (s.period * 1.9) + s.phase);
         const acc = -s.k * (s.th - idle) - DAMPING * s.w + scrollForce * (i % 2 ? -1 : 1);
         s.w = Math.max(-260, Math.min(260, s.w + acc * dt));
         s.th += s.w * dt;
@@ -152,7 +149,7 @@ export function WorkWithUs() {
       <div className="frame">
         <SectionHead id="paths-title" eyebrow="Work with us" title="A direct line for every kind of project." />
 
-        <ul className="mt-8 grid grid-cols-2 gap-x-3 gap-y-8 sm:mt-10 sm:gap-y-10 sm:gap-x-5 lg:mt-14 lg:grid-cols-4 lg:gap-x-6 [@media(max-height:780px)]:lg:mt-8">
+        <ul data-reveal-stagger className="mt-8 grid grid-cols-2 gap-x-3 gap-y-8 sm:mt-10 sm:gap-y-10 sm:gap-x-5 lg:mt-14 lg:grid-cols-4 lg:gap-x-6 [@media(max-height:780px)]:lg:mt-8">
           {PATHWAYS.map((p, i) => (
             <li key={p.audience} className="relative pt-1">
               {/* walnut rail — segments join into one rod across each row */}

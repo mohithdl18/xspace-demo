@@ -49,8 +49,7 @@ export function GradeAccordion({ products, className = "" }) {
   useEffect(() => {
     if (!layout) return;
     const openWidth = Math.max(layout.pill, layout.width - (products.length - 1) * (layout.pill + layout.gap));
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const instant = lastWidth.current !== layout.width || reduced;
+    const instant = lastWidth.current !== layout.width;
     lastWidth.current = layout.width;
     items.current.forEach((el, i) => {
       if (!el) return;

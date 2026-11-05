@@ -21,7 +21,7 @@ export function Hero({ eyebrow, headline, copy, imageUrl }) {
     const ctx = gsap.context(() => {
       gsap.set("[data-hero]", { visibility: "visible" });
       const mm = gsap.matchMedia();
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
+      mm.add("all", () => {
         const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
         tl.from(".hero-bg", { scale: 1.14, duration: 2.4, ease: "power2.out" }, 0)
           .from(".hero-eyebrow", { y: 16, autoAlpha: 0, duration: 0.8 }, 0.2)
@@ -36,18 +36,6 @@ export function Hero({ eyebrow, headline, copy, imageUrl }) {
         gsap.to(".hero-content", { yPercent: -12, autoAlpha: 0, ease: "none", scrollTrigger: cover });
         gsap.fromTo(".hero-dim", { opacity: 0 }, { opacity: 0.6, ease: "none", scrollTrigger: cover });
       });
-      // Reduced motion: the same reveal as a soft fade that comes into focus — no movement
-      mm.add("(prefers-reduced-motion: reduce)", () => {
-        const soft = { autoAlpha: 0, filter: "blur(10px)", duration: 1.2, clearProps: "filter" };
-        gsap
-          .timeline({ defaults: { ease: "power2.out" } })
-          .from(".hero-bg", { autoAlpha: 0, duration: 1.6 }, 0)
-          .from(".hero-eyebrow", soft, 0.3)
-          .from(".hero-content h1 > span", { ...soft, stagger: 0.25 }, 0.5)
-          .from(".hero-copy", soft, 1.0)
-          .from(".hero-meta > *", { ...soft, stagger: 0.15 }, 1.25)
-          .from(".hero-cue", soft, 1.5);
-      });
     }, el);
     return () => ctx.revert();
   }, []);
@@ -55,6 +43,7 @@ export function Hero({ eyebrow, headline, copy, imageUrl }) {
   return (
     <section
       ref={root}
+      data-no-auto-reveal
       data-nav-theme="dark"
       className="on-dark sticky top-0 z-0 flex min-h-svh items-center overflow-hidden bg-ink pb-16 pt-28 text-white md:pt-32"
     >
