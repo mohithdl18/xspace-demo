@@ -1,11 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProductVisual } from "@/components/product/Ply";
-import { ProductCard } from "@/components/product/ProductCard";
 import { CompareButton } from "@/components/product/CompareButton";
-import { QuoteForm } from "@/components/forms/QuoteForm";
 import { ArrowRight, Download, WhatsApp } from "@/components/ui/Icon";
-import { getCompany, getDocuments, getProduct, getProducts, getRelated } from "@/lib/queries";
+import { getCompany, getDocuments, getProduct, getProducts } from "@/lib/queries";
 import { SITE_URL, whatsappLink } from "@/lib/site";
 export function generateStaticParams() {
   return getProducts().map((p) => ({ slug: p.slug }));
@@ -28,8 +26,6 @@ export default async function ProductPage({ params }) {
   if (!p) notFound();
   const company = getCompany();
   const docs = getDocuments(p.id);
-  const related = getRelated(p.id, p.category.slug);
-  const allProducts = getProducts();
   const ld = {
     "@context": "https://schema.org",
     "@graph": [
@@ -121,9 +117,9 @@ export default async function ProductPage({ params }) {
               )}
 
               <div className="mt-10 flex flex-wrap gap-3">
-                <a href="#quote" className="btn btn-primary">
+                <Link href={`/contact?product=${encodeURIComponent(p.name)}#quote`} className="btn btn-primary">
                   Request a Quote <ArrowRight />
-                </a>
+                </Link>
                 {company.whatsapp && (
                   <a
                     className="btn btn-outline"
@@ -137,7 +133,7 @@ export default async function ProductPage({ params }) {
                     <WhatsApp className="h-4 w-4" /> WhatsApp
                   </a>
                 )}
-                <CompareButton slug={p.slug} name={p.name} className="min-h-[48px]! px-5" />
+                {/* <CompareButton slug={p.slug} name={p.name} className="min-h-[48px]! px-5" /> */}
               </div>
               {!p.verified && (
                 <p className="mt-6 border-l-2 border-oak bg-ice px-4 py-3 text-[13px] text-slate">
@@ -244,7 +240,11 @@ export default async function ProductPage({ params }) {
                   <Link href="/faq" className="link-u font-medium text-ink">
                     See our FAQs
                   </Link>{" "}
-                  or ask us in the form below.
+                  or{" "}
+                  <Link href={`/contact?product=${encodeURIComponent(p.name)}#quote`} className="link-u font-medium text-ink">
+                    ask us directly
+                  </Link>
+                  .
                 </p>
               )}
             </div>
@@ -252,48 +252,6 @@ export default async function ProductPage({ params }) {
         </div>
       </section>
 
-      <section id="quote" className="section bg-ice" aria-labelledby="pq-title">
-        <div className="frame grid gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-4">
-            <p className="eyebrow">Quotation</p>
-            <h2 id="pq-title" className="mt-5 text-h2">
-              Request a quote for {p.name}.
-            </h2>
-            <p className="mt-5 text-[16px] leading-relaxed text-ink/70">
-              Share thickness, quantity and delivery location — we’ll respond with availability and pricing.
-            </p>
-          </div>
-          <div className="border border-ink/10 bg-white p-6 md:p-10 lg:col-span-8">
-            <QuoteForm
-              productOptions={allProducts.map((x) => x.name)}
-              defaultProduct={p.name}
-              thicknessOptions={p.thicknesses}
-              whatsapp={company.whatsapp}
-              phone={company.phones[0]}
-            />
-          </div>
-        </div>
-      </section>
-
-      {related.length > 0 && (
-        <section className="section" aria-labelledby="rel-title">
-          <div className="frame">
-            <div className="flex items-end justify-between gap-6">
-              <h2 id="rel-title" className="text-h2">
-                Related products
-              </h2>
-              <Link href="/products" className="link-u hidden text-sm font-medium sm:inline-flex">
-                All products
-              </Link>
-            </div>
-            <div className="mt-12 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3" data-reveal-stagger>
-              {related.map((r) => (
-                <ProductCard key={r.slug} p={r} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
     </>
   );
