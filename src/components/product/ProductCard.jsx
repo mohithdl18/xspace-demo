@@ -2,22 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { grainUrl } from "@/lib/grain";
 /**
- * Catalogue card with rounded corners. On hover (or keyboard focus) the photo
- * gives way to a "Best fit for" panel listing up to four uses.
- * Uses come from the product's `bestFor` in src/data/products.json if set,
- * otherwise the BEST_FOR list below, otherwise its `applications`.
- * `mediaClassName` sizes the image area (default 4:3).
+ * Catalogue card with rounded corners. `mediaClassName` sizes the image area (default 4:3).
+ *
+ * Mouse devices: on hover (or keyboard focus) a walnut panel rises over the photo
+ * listing the available thicknesses; they aren't repeated under the card.
+ * (Mouse-only classes use the [@media(hover:hover)_and_(pointer:fine)] variant.)
+ * Touch devices: no hover panel — the thicknesses show under the card, highlighted.
  */
-/** Default "Best fit for" lists, used when products.json has no `bestFor` for the product */
-const BEST_FOR = {
-  "mr-eco-gold-grade": ["Wardrobes & storage", "Furniture carcasses", "Partitions & paneling", "False ceilings"],
-  "bwr-grade": ["Kitchen cabinets", "Bathroom vanities", "Utility & laundry units", "Damp interior areas"],
-  "bwp-elite-prime-710": ["Kitchen & sink units", "Bathrooms & wet areas", "Exterior furniture", "Doors & frames"],
-};
-
 export function ProductCard({ p, priority = false, mediaClassName = "aspect-4/3" }) {
-  const list = p.bestFor?.length ? p.bestFor : BEST_FOR[p.slug] || p.applications || [];
-  const bestFor = list.slice(0, 4);
+  const sizes = p.thicknesses || [];
   return (
     <article className="group relative flex h-full flex-col">
       <div
@@ -31,7 +24,7 @@ export function ProductCard({ p, priority = false, mediaClassName = "aspect-4/3"
             fill
             sizes="(min-width:1024px) 30vw, (min-width:640px) 45vw, 100vw"
             priority={priority}
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+            className="object-cover transition-transform duration-700 ease-out [@media(hover:hover)_and_(pointer:fine)]:group-hover:scale-[1.04]"
           />
         ) : (
           <>
@@ -64,23 +57,25 @@ export function ProductCard({ p, priority = false, mediaClassName = "aspect-4/3"
             </div>
           </>
         )}
-        {/* hover: best-fit panel rises over the photo */}
-        {bestFor.length > 0 && (
+        {/* hover (mouse devices): thickness panel rises over the photo */}
+        {sizes.length > 0 && (
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 z-[5] flex translate-y-full flex-col justify-end bg-walnut p-6 text-white transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:translate-y-0 group-focus-within:translate-y-0 md:p-8"
+            className="pointer-events-none absolute inset-0 z-[5] hidden translate-y-full flex-col justify-end bg-walnut p-6 text-white transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:translate-y-0 group-focus-within:translate-y-0 md:p-8 [@media(hover:hover)_and_(pointer:fine)]:flex"
           >
             <div
               className="absolute inset-0 opacity-[0.14] mix-blend-overlay"
               style={{ backgroundImage: grainUrl(p.tone || "walnut", 11), backgroundSize: "640px" }}
             />
             <div className="relative translate-y-6 opacity-0 transition-[translate,opacity] delay-0 duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-hover:delay-200 group-focus-within:translate-y-0 group-focus-within:opacity-100 group-focus-within:delay-200">
-              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-sand">Best fit for</p>
-              <ul className="mt-4 space-y-2.5">
-                {bestFor.map((b) => (
-                  <li key={b} className="flex items-center gap-3 text-[17px] font-medium leading-snug md:text-[19px]">
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-walnut" />
-                    {b}
+              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-sand">Available thickness</p>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {sizes.map((t) => (
+                  <li
+                    key={t}
+                    className="inline-flex min-h-[38px] items-center rounded-full border border-white/25 bg-white/10 px-4 text-[15px] font-medium md:text-[16px]"
+                  >
+                    {t}
                   </li>
                 ))}
               </ul>
@@ -102,8 +97,21 @@ export function ProductCard({ p, priority = false, mediaClassName = "aspect-4/3"
           </Link>
         </h3>
         {p.tagline && <p className="mt-2 text-[14px] leading-relaxed text-cream/65">{p.tagline}</p>}
-        {p.thicknesses.length > 0 && (
-          <p className="mt-auto pt-4 text-[12px] text-cream/55">{p.thicknesses.join(" · ")}</p>
+        {/* touch devices: thicknesses under the card, highlighted (mouse devices see them on hover) */}
+        {sizes.length > 0 && (
+          <div className="mt-auto pt-5 [@media(hover:hover)_and_(pointer:fine)]:hidden">
+            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-sand">Available thickness</p>
+            <ul className="mt-2.5 flex flex-wrap gap-1.5">
+              {sizes.map((t) => (
+                <li
+                  key={t}
+                  className="inline-flex min-h-[30px] items-center rounded-full border border-sand/40 bg-walnut/40 px-3 text-[12px] font-medium text-cream"
+                >
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
       </div>
     </article>

@@ -271,14 +271,17 @@ export function ProcessMain({ steps: _ignored }) {
             </div>
           ))}
 
-          {/* journey progress */}
-          <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-6 z-50 lg:bottom-8">
+          {/* journey progress, on a dark strip so it stands out from the photos */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-50 bg-black/65 pb-5 pt-5 backdrop-blur-[2px] lg:pb-6"
+          >
             <div className="frame">
               <div className="relative h-px w-full bg-white/20">
                 <div data-progress className="absolute inset-0 origin-left bg-white" style={{ transform: "scaleX(0)" }} />
               </div>
               {/* labels spread edge to edge with equal gaps between them */}
-              <ol className="mt-3 hidden justify-between gap-6 text-[11px] uppercase tracking-[0.18em] text-white lg:flex">
+              <ol className="mt-4 hidden justify-between gap-6 text-[12px] font-medium uppercase tracking-[0.14em] text-white lg:flex xl:text-[13px]">
                 {steps.map((s, i) => (
                   <li key={s.id ?? i} data-step-label className="whitespace-nowrap opacity-45">
                     {pad(i + 1)} · {s.title}
