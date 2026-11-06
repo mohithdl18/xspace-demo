@@ -10,7 +10,7 @@ export function SectionHead({ id, eyebrow, title, intro, action }) {
           <SplitWords>{title}</SplitWords>
         </h2>
         {intro && (
-          <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-ink/70" data-reveal>
+          <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-cream/70" data-reveal>
             {intro}
           </p>
         )}

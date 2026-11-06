@@ -21,7 +21,7 @@ export default async function ComparePage({ searchParams }) {
   const specLabels = [...new Set(items.flatMap((p) => p.specs.map((s) => s.label)))].filter(
     (l) => l !== "Grade" && l !== "Thickness",
   );
-  const NA = <span className="text-ink/45">Not specified</span>;
+  const NA = <span className="text-cream/45">Not specified</span>;
   const list = (xs) => (xs.length ? xs.join(", ") : NA);
   const rows = [
     { label: "Category", cell: (p) => p.category.name },
@@ -54,9 +54,9 @@ export default async function ComparePage({ searchParams }) {
       />
       <section className="frame pb-28">
         {items.length === 0 ? (
-          <div className="bg-ice px-8 py-16 text-center">
+          <div className="bg-panel px-8 py-16 text-center">
             <p className="text-h3">Nothing to compare yet.</p>
-            <p className="mt-2 text-[15px] text-ink/65">Use “Compare” on any product to add it here.</p>
+            <p className="mt-2 text-[15px] text-cream/65">Use “Compare” on any product to add it here.</p>
             <Link href="/products" className="btn btn-primary mt-6">
               Browse products
             </Link>
@@ -69,7 +69,7 @@ export default async function ComparePage({ searchParams }) {
                 <tr>
                   <th
                     scope="col"
-                    className="w-[22%] align-bottom pb-6 text-[12px] font-medium uppercase tracking-[0.16em] text-ink/55"
+                    className="w-[22%] align-bottom pb-6 text-[12px] font-medium uppercase tracking-[0.16em] text-cream/55"
                   >
                     Product
                   </th>
@@ -91,7 +91,7 @@ export default async function ComparePage({ searchParams }) {
                           .filter((x) => x.slug !== p.slug)
                           .map((x) => x.slug)
                           .join(",")}`}
-                        className="mt-2 inline-block text-[12px] text-ink/55 hover:text-ink"
+                        className="mt-2 inline-block text-[12px] text-cream/55 hover:text-cream"
                       >
                         Remove
                       </Link>
@@ -101,8 +101,8 @@ export default async function ComparePage({ searchParams }) {
               </thead>
               <tbody>
                 {rows.map((r) => (
-                  <tr key={r.label} className="border-t border-ink/10 align-top">
-                    <th scope="row" className="py-4 pr-4 font-medium text-ink/60">
+                  <tr key={r.label} className="border-t border-cream/10 align-top">
+                    <th scope="row" className="py-4 pr-4 font-medium text-cream/60">
                       {r.label}
                     </th>
                     {items.map((p) => (
@@ -112,11 +112,11 @@ export default async function ComparePage({ searchParams }) {
                     ))}
                   </tr>
                 ))}
-                <tr className="border-t border-ink/10">
+                <tr className="border-t border-cream/10">
                   <th scope="row" />
                   {items.map((p) => (
                     <td key={p.slug} className="px-3 py-6">
-                      <Link href={`/products/${p.slug}#quote`} className="btn btn-primary min-h-[44px]! w-full">
+                      <Link href="/#contact" className="btn btn-primary min-h-[44px]! w-full">
                         Quote
                       </Link>
                     </td>

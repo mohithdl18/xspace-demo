@@ -14,15 +14,15 @@ export function CompareTray() {
         {message}
       </p>
       <div
-        className={`fixed inset-x-0 bottom-0 z-40 border-t border-ink/10 bg-white/95 backdrop-blur-md transition-[transform,visibility] duration-500 ease-out ${hidden ? "invisible translate-y-full" : "visible translate-y-0"}`}
+        className={`fixed inset-x-0 bottom-0 z-40 border-t border-cream/10 bg-base/95 backdrop-blur-md transition-[transform,visibility] duration-500 ease-out ${hidden ? "invisible translate-y-full" : "visible translate-y-0"}`}
         aria-hidden={hidden}
         inert={hidden}
       >
         <div className="frame flex flex-wrap items-center gap-3 py-3 pr-20 sm:flex-nowrap sm:gap-6">
-          <p className="text-xs font-medium uppercase tracking-[0.16em] text-ink/60">Compare · {items.length}/3</p>
+          <p className="text-xs font-medium uppercase tracking-[0.16em] text-cream/60">Compare · {items.length}/3</p>
           <ul className="flex min-w-0 flex-1 gap-2 overflow-x-auto">
             {items.map((i) => (
-              <li key={i.slug} className="flex shrink-0 items-center gap-2 border border-ink/10 py-1 pl-1 pr-1">
+              <li key={i.slug} className="flex shrink-0 items-center gap-2 border border-cream/10 py-1 pl-1 pr-1">
                 <span
                   className="h-8 w-8 shrink-0"
                   style={{ backgroundImage: grainUrl(i.tone), backgroundSize: "cover" }}
@@ -32,7 +32,7 @@ export function CompareTray() {
                 <button
                   type="button"
                   onClick={() => remove(i.slug)}
-                  className="flex h-8 w-8 items-center justify-center text-ink/60 hover:text-ink"
+                  className="flex h-8 w-8 items-center justify-center text-cream/60 hover:text-cream"
                   aria-label={`Remove ${i.name} from comparison`}
                 >
                   <Close className="h-4 w-4" />
@@ -41,7 +41,7 @@ export function CompareTray() {
             ))}
           </ul>
           <div className="flex shrink-0 items-center gap-2">
-            <button type="button" onClick={clear} className="min-h-[44px] px-3 text-[13px] text-ink/60 hover:text-ink">
+            <button type="button" onClick={clear} className="min-h-[44px] px-3 text-[13px] text-cream/60 hover:text-cream">
               Clear
             </button>
             <Link

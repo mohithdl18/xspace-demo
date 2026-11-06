@@ -1,13 +1,26 @@
 @import 'tailwindcss';
 @import 'lenis/dist/lenis.css';
 
+/*
+  Dark theme, built around the brand walnut #694530.
+    deep   — darkest wood-black: hero, footer, manufacturing stage
+    base   — page background
+    panel  — cards and alternate sections
+    raised — cards that sit on a panel
+    walnut — brand colour: buttons, badges, open/hover states
+    sand   — light walnut tint for accents and eyebrows (readable on dark)
+    cream  — main text
+*/
 @theme {
-  --color-ink: #111111;
-  --color-ice: #eff7fc;
-  --color-sky: #c8e4f4;
+  --color-deep: #0b0806;
+  --color-base: #130e0b;
+  --color-panel: #1d1611;
+  --color-raised: #2a2019;
   --color-walnut: #694530;
+  --color-walnut-light: #85583d;
+  --color-sand: #d9b38a;
+  --color-cream: #f3ebe2;
   --color-oak: #a67c52;
-  --color-slate: #3d4a55;
 
   --font-sans: Poppins, system-ui, sans-serif;
 
@@ -52,7 +65,7 @@
 }
 
 @utility eyebrow {
-  @apply text-[0.72rem] font-medium uppercase tracking-[0.22em] text-walnut;
+  @apply text-[0.72rem] font-medium uppercase tracking-[0.22em] text-sand;
 }
 
 @utility rule {
@@ -92,42 +105,42 @@
 }
 
 @utility btn-primary {
-  @apply bg-ink text-white;
+  @apply bg-walnut text-cream;
   &::before {
-    background: var(--walnut);
+    background: var(--walnut-light);
   }
 }
 
 @utility btn-outline {
-  @apply border border-ink/80 text-ink;
+  @apply border border-cream/60 text-cream;
   &::before {
-    background: var(--ink);
+    background: var(--cream);
   }
   &:hover {
-    @apply text-white;
+    @apply text-deep;
   }
   &:focus-visible {
-    @apply text-white;
+    @apply text-deep;
   }
 }
 
 @utility btn-outline-light {
-  @apply border border-white/70 text-white;
+  @apply border border-cream/60 text-cream;
   &::before {
-    background: var(--white);
+    background: var(--cream);
   }
   &:hover {
-    @apply text-ink;
+    @apply text-deep;
   }
   &:focus-visible {
-    @apply text-ink;
+    @apply text-deep;
   }
 }
 
 @utility btn-light {
-  @apply bg-white text-ink;
+  @apply bg-cream text-deep;
   &::before {
-    background: var(--sky);
+    background: var(--sand);
   }
 }
 
@@ -153,28 +166,28 @@
 }
 
 @utility chip {
-  @apply inline-flex min-h-[32px] items-center border border-ink/15 px-3 text-xs font-medium text-ink/80;
+  @apply inline-flex min-h-[32px] items-center border border-cream/15 px-3 text-xs font-medium text-cream/80;
 }
 
 @utility badge {
-  @apply inline-flex items-center bg-sky px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-ink;
+  @apply inline-flex items-center bg-walnut px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-cream;
 }
 
 @utility field {
   & label {
-    @apply mb-2 block text-xs font-medium uppercase tracking-[0.14em] text-ink/70;
+    @apply mb-2 block text-xs font-medium uppercase tracking-[0.14em] text-cream/70;
   }
 }
 
 @utility input {
-  @apply block min-h-[48px] w-full border border-ink/20 bg-white px-4 py-3 text-[15px] text-ink placeholder:text-ink/40 transition-colors;
+  @apply block min-h-[48px] w-full border border-cream/20 bg-panel px-4 py-3 text-[15px] text-cream placeholder:text-cream/40 transition-colors;
   border-radius: 0;
   &:hover {
-    @apply border-ink/40;
+    @apply border-cream/40;
   }
   &:focus {
-    @apply border-ink outline-hidden;
-    box-shadow: 0 0 0 3px var(--sky);
+    @apply border-sand outline-hidden;
+    box-shadow: 0 0 0 3px rgba(105, 69, 48, 0.55);
   }
   &[aria-invalid='true'] {
     @apply border-[#B42318];
@@ -186,20 +199,22 @@
 }
 
 @utility placeholder-tag {
-  @apply absolute left-3 top-3 z-10 bg-white/90 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-ink/70 backdrop-blur-sm;
+  @apply absolute left-3 top-3 z-10 bg-base/90 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-cream/70 backdrop-blur-sm;
 }
 
 @layer base {
   :root {
-    --white: #ffffff;
-    --ice: #eff7fc;
-    --sky: #c8e4f4;
-    --ink: #111111;
+    --deep: #0b0806;
+    --base: #130e0b;
+    --panel: #1d1611;
     --walnut: #694530;
+    --walnut-light: #85583d;
+    --sand: #d9b38a;
+    --cream: #f3ebe2;
     --oak: #a67c52;
-    --line: rgba(17, 17, 17, 0.12);
-    --header-h: 76px;
-    color-scheme: light;
+    --line: rgba(243, 235, 226, 0.12);
+    --header-h: 72px;
+    color-scheme: dark;
   }
   html {
     -webkit-text-size-adjust: 100%;
@@ -207,19 +222,19 @@
     scroll-padding-top: calc(var(--header-h) + 16px);
   }
   body {
-    @apply bg-white font-sans text-ink antialiased;
+    @apply bg-base font-sans text-cream antialiased;
     font-weight: 400;
     overflow-x: clip;
   }
-  ::selection { background: var(--sky); color: var(--ink); }
+  ::selection { background: var(--walnut); color: var(--cream); }
 
   /* Visible, consistent focus for keyboard users */
   :focus-visible {
-    outline: 2px solid var(--ink);
+    outline: 2px solid var(--sand);
     outline-offset: 3px;
     border-radius: 2px;
   }
-  .on-dark :focus-visible { outline-color: var(--sky); }
+  .on-dark :focus-visible { outline-color: var(--sand); }
 
   h1, h2, h3, h4 { font-weight: 500; }
   img { max-width: 100%; height: auto; }
@@ -267,7 +282,7 @@ select.input {
   appearance: none;
   -webkit-appearance: none;
   padding-right: 2.75rem;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path d='M2 4l4 4 4-4' fill='none' stroke='%23111' stroke-width='1.4'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path d='M2 4l4 4 4-4' fill='none' stroke='%23f3ebe2' stroke-width='1.4'/></svg>");
   background-repeat: no-repeat;
   background-position: right 1rem center;
   background-size: 12px;
@@ -288,16 +303,4 @@ main:has([data-footer-reveal]) ~ footer {
 @keyframes wa-pulse {
   0% { transform: scale(1); opacity: 0.4; }
   70%, 100% { transform: scale(1.6); opacity: 0; }
-}
-
-/* Custom saw-blade cursor (mouse devices). The static blade is the fallback
-   until the spinning one (SawCursor.jsx) takes over and hides the native one. */
-@media (hover: hover) and (pointer: fine) {
-  html {
-    cursor: url("/images/cursor/saw-blade-32.png") 16 16, auto;
-  }
-  html.saw-cursor,
-  html.saw-cursor * {
-    cursor: none !important;
-  }
 }

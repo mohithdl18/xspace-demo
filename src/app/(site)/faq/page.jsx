@@ -36,12 +36,12 @@ export default function FaqPage() {
               <h1 className="mt-6 text-h1" data-split>
                 <SplitWords>Common questions.</SplitWords>
               </h1>
-              <p className="mt-6 max-w-md text-[17px] leading-relaxed text-ink/70 md:text-lg md:leading-[1.75rem]" data-reveal>
+              <p className="mt-6 max-w-md text-[17px] leading-relaxed text-cream/70 md:text-lg md:leading-[1.75rem]" data-reveal>
                 Grades, thicknesses, applications and how to order, quick answers from the XSpace team.
               </p>
-              <p className="mt-8 text-[16px] leading-relaxed text-ink/70" data-reveal>
+              <p className="mt-8 text-[16px] leading-relaxed text-cream/70" data-reveal>
                 Can’t find your answer?{" "}
-                <Link href="/#contact" className="link-u font-medium text-ink">
+                <Link href="/#contact" className="link-u font-medium text-cream">
                   Ask us directly.
                 </Link>
               </p>
@@ -51,12 +51,12 @@ export default function FaqPage() {
           {/* right: questions */}
           <div className="lg:col-span-7">
             {faqs.map((f) => (
-              <details key={f.id} className="group border-b border-ink/15 first:border-t" data-reveal>
+              <details key={f.id} className="group border-b border-cream/15 first:border-t" data-reveal>
                 <summary className="flex min-h-[72px] cursor-pointer list-none items-center justify-between gap-6 py-5 text-[18px] font-medium [&::-webkit-details-marker]:hidden">
                   {f.question}
                   <Plus className="h-5 w-5 shrink-0 transition-transform duration-300 group-open:rotate-45" />
                 </summary>
-                <p className="max-w-2xl pb-6 text-[16px] leading-relaxed text-ink/70">{f.answer}</p>
+                <p className="max-w-2xl pb-6 text-[16px] leading-relaxed text-cream/70">{f.answer}</p>
               </details>
             ))}
           </div>

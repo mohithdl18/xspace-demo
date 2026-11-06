@@ -36,10 +36,10 @@ export function WhatsAppButton({ number, productNames }) {
       {/* label that rises above the circle on hover / focus */}
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-full right-0 mb-3 translate-y-2 whitespace-nowrap rounded-full bg-ink px-4 py-2 text-[13px] font-medium text-white opacity-0 shadow-[0_10px_24px_-10px_rgba(0,0,0,0.5)] transition-[opacity,transform] duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100"
+        className="pointer-events-none absolute bottom-full right-0 mb-3 translate-y-2 whitespace-nowrap rounded-full bg-deep px-4 py-2 text-[13px] font-medium text-white opacity-0 shadow-[0_10px_24px_-10px_rgba(0,0,0,0.5)] transition-[opacity,transform] duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100"
       >
         {label}
-        <span className="absolute -bottom-1 right-6 h-2.5 w-2.5 rotate-45 bg-ink md:right-7" />
+        <span className="absolute -bottom-1 right-6 h-2.5 w-2.5 rotate-45 bg-deep md:right-7" />
       </span>
     </a>
   );

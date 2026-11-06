@@ -24,7 +24,7 @@ export default function ManufacturingPage() {
       <section className="frame pb-24">
         <ProcessSequence steps={steps} />
       </section>
-      <section className="section bg-ice">
+      <section className="section bg-panel">
         <div className="frame grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <p className="eyebrow" data-reveal>
@@ -35,7 +35,7 @@ export default function ManufacturingPage() {
             </h2>
           </div>
           <div className="lg:col-span-5 lg:col-start-8">
-            <p className="text-[17px] leading-relaxed text-ink/70" data-reveal>
+            <p className="text-[17px] leading-relaxed text-cream/70" data-reveal>
               Moisture resistant, boiling water proof, calibrated and fire retardant plywood are each made for different
               conditions. Specify by grade and thickness, and our team will confirm the technical details for your
               application.

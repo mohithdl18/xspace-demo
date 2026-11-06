@@ -36,7 +36,7 @@ export default function AboutPage() {
       <section className="section rule">
         <div className="frame grid items-center gap-16 lg:grid-cols-12">
           <div
-            className="relative h-[320px] min-w-0 overflow-hidden rounded-[24px] bg-ice sm:h-[460px] lg:col-span-6"
+            className="relative h-[320px] min-w-0 overflow-hidden rounded-[24px] bg-panel sm:h-[460px] lg:col-span-6"
             data-reveal-img
           >
             <Image
@@ -54,11 +54,11 @@ export default function AboutPage() {
             <h2 className="mt-5 text-h2" data-split>
               <SplitWords>A timber heritage, engineered for modern interiors.</SplitWords>
             </h2>
-            <p className="mt-6 text-[17px] leading-relaxed text-ink/70" data-reveal>
+            <p className="mt-6 text-[17px] leading-relaxed text-cream/70" data-reveal>
               XSpace Plywood is a name in premium commercial plywood and blockboard, powered by {c.poweredBy}. The brand
               carries a heritage that dates to {c.foundedYear} and operates from {c.addressLines[0]}, {c.city}.
             </p>
-            <p className="mt-4 text-[17px] leading-relaxed text-ink/70" data-reveal>
+            <p className="mt-4 text-[17px] leading-relaxed text-cream/70" data-reveal>
               We source quality raw materials and work with advanced manufacturing technology, aiming for consistency,
               precision and reliability in every sheet.
             </p>
@@ -66,7 +66,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section bg-ice" aria-labelledby="timeline-title">
+      <section className="section bg-panel" aria-labelledby="timeline-title">
         <div className="frame">
           <p className="eyebrow" data-reveal>
             Timeline
@@ -74,18 +74,18 @@ export default function AboutPage() {
           <h2 id="timeline-title" className="mt-5 text-h2" data-split>
             <SplitWords>Six decades, one direction.</SplitWords>
           </h2>
-          <ol className="mt-14 grid divide-y divide-ink/10 border-y border-ink/10 md:grid-cols-2 md:divide-x md:divide-y-0" data-reveal-stagger>
-            <li className="bg-ice p-8 md:p-12">
-              <p className="text-h1 font-medium text-walnut">{c.foundedYear}</p>
+          <ol className="mt-14 grid divide-y divide-cream/10 border-y border-cream/10 md:grid-cols-2 md:divide-x md:divide-y-0" data-reveal-stagger>
+            <li className="bg-panel p-8 md:p-12">
+              <p className="text-h1 font-medium text-sand">{c.foundedYear}</p>
               <p className="mt-4 text-[17px] font-medium">The heritage begins</p>
-              <p className="mt-2 text-[15px] leading-relaxed text-ink/70">
+              <p className="mt-2 text-[15px] leading-relaxed text-cream/70">
                 Built on the legacy of C Nanjappa Timbers, XSpace found its true foundation.
               </p>
             </li>
-            <li className="bg-ice p-8 md:p-12">
-              <p className="text-h1 font-medium text-walnut">Today</p>
+            <li className="bg-panel p-8 md:p-12">
+              <p className="text-h1 font-medium text-sand">Today</p>
               <p className="mt-4 text-[17px] font-medium">XSpace Plywood</p>
-              <p className="mt-2 text-[15px] leading-relaxed text-ink/70">
+              <p className="mt-2 text-[15px] leading-relaxed text-cream/70">
                 Plywood, blockboard, doors, MDF, laminates, PVC foam boards, particle boards and timber from {c.city},
                 Karnataka.
               </p>
@@ -107,12 +107,12 @@ export default function AboutPage() {
               // outer wrapper slides in on scroll; the card inside handles its own hover lift,
               // so the two movements never fight and every card lands exactly on the grid
               <div key={v.title} className="flex min-w-0">
-                <article className="group flex w-full flex-col rounded-[24px] border border-ink/10 bg-ice p-7 transition-[translate,box-shadow] duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_24px_50px_-28px_rgba(17,17,17,0.35)] md:p-8">
+                <article className="group flex w-full flex-col rounded-[24px] border border-cream/10 bg-panel p-7 transition-[translate,box-shadow] duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_24px_50px_-28px_rgba(17,17,17,0.35)] md:p-8">
                   <span className="mb-8 flex h-14 w-14 items-center justify-center rounded-full bg-walnut text-white transition-[scale] duration-500 ease-out group-hover:scale-105">
                     <v.Icon className="h-6 w-6" />
                   </span>
                   <h3 className="text-[19px] font-medium">{v.title}</h3>
-                  <p className="mt-3 text-[15px] leading-relaxed text-ink/70">{v.body}</p>
+                  <p className="mt-3 text-[15px] leading-relaxed text-cream/70">{v.body}</p>
                 </article>
               </div>
             ))}

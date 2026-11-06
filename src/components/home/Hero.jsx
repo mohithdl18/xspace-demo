@@ -45,7 +45,7 @@ export function Hero({ eyebrow, headline, copy, imageUrl }) {
       ref={root}
       data-no-auto-reveal
       data-nav-theme="dark"
-      className="on-dark sticky top-0 z-0 flex min-h-svh items-center overflow-hidden bg-ink pb-16 pt-28 text-white md:pt-32"
+      className="on-dark sticky top-0 z-0 flex min-h-svh items-center overflow-hidden bg-deep pb-16 pt-28 text-white md:pt-32"
     >
       {/* Full-screen background photo */}
       <div aria-hidden="true" className="hero-bg-wrap absolute inset-0">
@@ -74,7 +74,7 @@ export function Hero({ eyebrow, headline, copy, imageUrl }) {
 
       <div className="hero-content frame relative">
         <div className="min-w-0 max-w-4xl">
-          <p data-hero className="hero-eyebrow eyebrow text-sky!">
+          <p data-hero className="hero-eyebrow eyebrow text-sand!">
             {eyebrow}
           </p>
           <h1 data-hero className="mt-6 text-display font-medium">
@@ -130,7 +130,7 @@ export function Hero({ eyebrow, headline, copy, imageUrl }) {
       </div>
 
       {/* darkens as the next section slides over (driven on scroll) */}
-      <div aria-hidden="true" className="hero-dim pointer-events-none absolute inset-0 bg-ink opacity-0" />
+      <div aria-hidden="true" className="hero-dim pointer-events-none absolute inset-0 bg-deep opacity-0" />
     </section>
   );
 }

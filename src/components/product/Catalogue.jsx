@@ -88,11 +88,11 @@ export function Catalogue({ products, categories, initial = EMPTY, syncUrl = fal
   );
   return (
     <div>
-      {/* <div role="search" className="grid gap-4 border-y border-ink/10 py-6 md:grid-cols-[1.4fr_repeat(4,1fr)]">
+      {/* <div role="search" className="grid gap-4 border-y border-cream/10 py-6 md:grid-cols-[1.4fr_repeat(4,1fr)]">
         <div className="field">
           <label htmlFor="f-q">Search</label>
           <div className="relative">
-            <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-ink/50" />
+            <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-cream/50" />
             <input
               id="f-q"
               type="search"
@@ -115,7 +115,7 @@ export function Catalogue({ products, categories, initial = EMPTY, syncUrl = fal
       </div>
 
       <div className="flex min-h-[56px] items-center justify-between gap-4 py-4">
-        <p className="text-[14px] text-ink/65" role="status" aria-live="polite">
+        <p className="text-[14px] text-cream/65" role="status" aria-live="polite">
           {results.length} {results.length === 1 ? "product" : "products"}
         </p>
         {active && (
@@ -136,9 +136,9 @@ export function Catalogue({ products, categories, initial = EMPTY, syncUrl = fal
           ))}
         </div>
       ) : (
-        <div className="bg-ice px-8 py-16 text-center">
+        <div className="bg-panel px-8 py-16 text-center">
           <p className="text-h3">No products match those filters.</p>
-          <p className="mt-2 text-[15px] text-ink/65">
+          <p className="mt-2 text-[15px] text-cream/65">
             Thickness and application filters only cover products with published specifications.
           </p>
           <button type="button" onClick={() => update(EMPTY)} className="btn btn-outline mt-6">

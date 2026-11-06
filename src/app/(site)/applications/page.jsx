@@ -24,7 +24,7 @@ export default function ApplicationsPage() {
         <ul className="flex flex-wrap gap-2">
           {apps.map((a) => (
             <li key={a.slug}>
-              <a href={`#${a.slug}`} className="chip min-h-[44px] hover:border-ink">
+              <a href={`#${a.slug}`} className="chip min-h-[44px] hover:border-cream">
                 {a.name}
               </a>
             </li>
@@ -39,7 +39,7 @@ export default function ApplicationsPage() {
               key={a.slug}
               id={a.slug}
               aria-labelledby={`${a.slug}-t`}
-              className={`py-20 md:py-28 ${i % 2 ? "bg-ice" : ""}`}
+              className={`py-20 md:py-28 ${i % 2 ? "bg-panel" : ""}`}
             >
               <div className="frame grid items-center gap-12 lg:grid-cols-12">
                 <div
@@ -76,13 +76,13 @@ export default function ApplicationsPage() {
                   )}
                 </div>
                 <div className={`lg:col-span-5 ${i % 2 ? "lg:order-1" : "lg:col-start-8"}`}>
-                  <p className="text-[12px] font-semibold tracking-[0.2em] text-walnut" data-reveal>
+                  <p className="text-[12px] font-semibold tracking-[0.2em] text-sand" data-reveal>
                     {String(i + 1).padStart(2, "0")}
                   </p>
                   <h2 id={`${a.slug}-t`} className="mt-3 text-h2" data-split>
                     <SplitWords>{a.name}</SplitWords>
                   </h2>
-                  <p className="mt-4 text-[17px] leading-relaxed text-ink/70" data-reveal>
+                  <p className="mt-4 text-[17px] leading-relaxed text-cream/70" data-reveal>
                     {a.summary}
                   </p>
                   <ul className="mt-6 flex flex-wrap gap-2" data-reveal>
@@ -93,14 +93,14 @@ export default function ApplicationsPage() {
                     ))}
                   </ul>
                   {linked.length > 0 && (
-                    <div className="mt-10 border-t border-ink/10" data-reveal>
-                      <p className="pt-5 text-[12px] uppercase tracking-[0.16em] text-ink/55">Recommended products</p>
+                    <div className="mt-10 border-t border-cream/10" data-reveal>
+                      <p className="pt-5 text-[12px] uppercase tracking-[0.16em] text-cream/55">Recommended products</p>
                       <ul>
                         {linked.map((p) => (
                           <li key={p.slug}>
                             <Link
                               href={`/products/${p.slug}`}
-                              className="group flex min-h-[56px] items-center justify-between border-b border-ink/10 text-[17px] font-medium"
+                              className="group flex min-h-[56px] items-center justify-between border-b border-cream/10 text-[17px] font-medium"
                             >
                               <span>
                                 {p.name} {p.grade && <span className="badge ml-2 align-middle">{p.grade}</span>}

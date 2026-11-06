@@ -94,7 +94,7 @@ export function GradeAccordion({ products, className = "" }) {
             }}
             ref={(el) => (items.current[i] = el)}
             style={layout ? { flex: "0 0 auto" } : undefined}
-            className={`group relative block h-full min-w-0 overflow-hidden rounded-[22px] bg-ink shadow-[0_18px_40px_-18px_rgba(17,17,17,0.45)] lg:rounded-[28px] ${
+            className={`group relative block h-full min-w-0 overflow-hidden rounded-[22px] bg-deep shadow-[0_18px_40px_-18px_rgba(17,17,17,0.45)] lg:rounded-[28px] ${
               layout ? "" : open ? "grow basis-0" : "shrink-0 basis-[52px] sm:basis-[84px] lg:basis-[104px]"
             }`}
           >
@@ -118,7 +118,7 @@ export function GradeAccordion({ products, className = "" }) {
             {/* collapsed pills get a soft wash, like the reference */}
             <span
               aria-hidden="true"
-              className={`absolute inset-0 bg-white transition-opacity duration-700 ${open ? "opacity-0" : "opacity-25"}`}
+              className={`absolute inset-0 bg-base transition-opacity duration-700 ${open ? "opacity-0" : "opacity-25"}`}
             />
 
             {/* icon + text */}
@@ -127,7 +127,7 @@ export function GradeAccordion({ products, className = "" }) {
                 open ? "left-3 right-3 sm:left-4 sm:right-4 lg:left-6 lg:right-6" : "left-1/2 -translate-x-1/2"
               }`}
             >
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-[11px] sm:h-11 sm:w-11 font-semibold tracking-[0.08em] text-walnut shadow-sm lg:h-12 lg:w-12">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-base text-[11px] sm:h-11 sm:w-11 font-semibold tracking-[0.08em] text-sand shadow-sm lg:h-12 lg:w-12">
                 {p.grade || p.name.slice(0, 2).toUpperCase()}
               </span>
               <span

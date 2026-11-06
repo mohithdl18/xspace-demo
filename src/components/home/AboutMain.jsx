@@ -15,7 +15,7 @@ export function AboutMain({ company, home, years, categoryCount }) {
   return (
     <section
       id="intro"
-      className="sticky top-0 z-0 flex min-h-svh w-full items-center overflow-hidden rounded-t-[28px] bg-white py-20 md:rounded-t-[44px] md:py-24"
+      className="sticky top-0 z-0 flex min-h-svh w-full items-center overflow-hidden rounded-t-[28px] bg-base py-20 md:rounded-t-[44px] md:py-24"
     >
       <div className="frame grid w-full gap-12 lg:grid-cols-12 lg:items-center">
         <div className="lg:col-span-5">
@@ -42,20 +42,20 @@ export function AboutMain({ company, home, years, categoryCount }) {
           <h2 className="text-h2" data-split>
             <SplitWords>{home.introHeading}</SplitWords>
           </h2>
-          <p className="mt-6 text-[17px] leading-relaxed text-ink/70" data-reveal>
+          <p className="mt-6 text-[17px] leading-relaxed text-cream/70" data-reveal>
             {home.introBody}
           </p>
-          <dl className="mt-12 grid grid-cols-3 gap-8 border-t border-ink/10 pt-8" data-reveal-stagger>
+          <dl className="mt-12 grid grid-cols-3 gap-8 border-t border-cream/10 pt-8" data-reveal-stagger>
             <div>
-              <dt className="text-[13px] text-ink/55">Years of heritage</dt>
+              <dt className="text-[13px] text-cream/55">Years of heritage</dt>
               <dd className="mt-2 text-h2 font-medium">{years}+</dd>
             </div>
             <div>
-              <dt className="text-[13px] text-ink/55">Happy customers</dt>
+              <dt className="text-[13px] text-cream/55">Happy customers</dt>
               <dd className="mt-2 text-h2 font-medium">10K+</dd>
             </div>
             <div>
-              <dt className="text-[13px] text-ink/55">Product categories</dt>
+              <dt className="text-[13px] text-cream/55">Product categories</dt>
               <dd className="mt-2 text-h2 font-medium">3</dd>
             </div>
           </dl>

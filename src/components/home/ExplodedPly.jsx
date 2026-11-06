@@ -55,7 +55,7 @@ export function ExplodedPly() {
     return () => ctx.revert();
   }, []);
   return (
-    <section ref={root} aria-labelledby="construction-title" className="relative bg-ice">
+    <section ref={root} aria-labelledby="construction-title" className="relative bg-panel">
       <div className="x-pin flex min-h-svh items-center py-20 lg:py-0">
         <div className="frame grid items-center gap-12 lg:grid-cols-12">
           <div className="min-w-0 lg:col-span-5">
@@ -63,19 +63,19 @@ export function ExplodedPly() {
             <h2 id="construction-title" className="mt-5 text-h2">
               Strength is built in layers.
             </h2>
-            <p className="mt-5 max-w-md text-[16px] leading-relaxed text-ink/70">
+            <p className="mt-5 max-w-md text-[16px] leading-relaxed text-cream/70">
               Scroll to open up a sheet of MR Eco &amp; Gold Grade and see where each technology works.
             </p>
-            <ol className="relative mt-10 space-y-6 border-l border-ink/15 pl-6">
+            <ol className="relative mt-10 space-y-6 border-l border-cream/15 pl-6">
               <span
                 aria-hidden="true"
                 className="x-progress absolute -left-px top-0 h-full w-px origin-top bg-walnut"
               />
               {NOTES.map((n) => (
                 <li key={n.k} className="x-note">
-                  <p className="text-[11px] font-semibold tracking-[0.2em] text-walnut">{n.k}</p>
+                  <p className="text-[11px] font-semibold tracking-[0.2em] text-sand">{n.k}</p>
                   <p className="mt-1 text-[17px] font-medium">{n.title}</p>
-                  <p className="mt-1 max-w-sm text-[14px] leading-relaxed text-ink/65">{n.body}</p>
+                  <p className="mt-1 max-w-sm text-[14px] leading-relaxed text-cream/65">{n.body}</p>
                 </li>
               ))}
             </ol>
@@ -117,7 +117,7 @@ export function ExplodedPly() {
                 </div>
               </div>
             </div>
-            <p className="absolute bottom-4 right-0 max-w-[260px] text-right text-[11px] leading-relaxed text-slate">
+            <p className="absolute bottom-4 right-0 max-w-[260px] text-right text-[11px] leading-relaxed text-cream/60">
               Illustrative diagram. Actual ply count varies by thickness and grade.
             </p>
           </div>

@@ -114,14 +114,14 @@ export function ProductVisual({
 }) {
   if (imageUrl) {
     return (
-      <div className={`relative overflow-hidden bg-ice ${className}`}>
+      <div className={`relative overflow-hidden bg-panel ${className}`}>
         <Image src={imageUrl} alt={alt} fill sizes={sizes} priority={priority} className="object-cover" />
       </div>
     );
   }
   return (
     <div
-      className={`relative overflow-hidden bg-ice ${className}`}
+      className={`relative overflow-hidden bg-panel ${className}`}
       role="img"
       aria-label={`${alt} — illustrative material render`}
     >

@@ -144,7 +144,7 @@ export function WorkWithUs() {
       ref={root}
       id="work-with-us"
       aria-labelledby="paths-title"
-      className="relative flex min-h-svh w-full flex-col justify-center overflow-hidden rounded-t-[28px] bg-ice py-10 shadow-[0_-28px_60px_-18px_rgba(17,17,17,0.35)] md:rounded-t-[44px] md:py-16 [@media(max-height:780px)]:py-8"
+      className="relative flex min-h-svh w-full flex-col justify-center overflow-hidden rounded-t-[28px] bg-panel py-10 shadow-[0_-28px_60px_-18px_rgba(17,17,17,0.35)] md:rounded-t-[44px] md:py-16 [@media(max-height:780px)]:py-8"
     >
       <div className="frame">
         <SectionHead id="paths-title" eyebrow="Work with us" title="A direct line for every kind of project." />
@@ -166,27 +166,27 @@ export function WorkWithUs() {
               >
                 <span
                   aria-hidden="true"
-                  className="absolute left-1/2 top-0 z-10 h-2.5 w-2.5 -translate-x-1/2 -translate-y-[60%] rounded-full bg-ink"
+                  className="absolute left-1/2 top-0 z-10 h-2.5 w-2.5 -translate-x-1/2 -translate-y-[60%] rounded-full bg-deep"
                 />
                 <span
                   aria-hidden="true"
-                  className="mx-auto block h-(--d) w-px bg-ink/35 lg:h-(--dl)"
+                  className="mx-auto block h-(--d) w-px bg-cream/35 lg:h-(--dl)"
                   style={{ ["--d"]: `${p.drop[0]}px`, ["--dl"]: `${p.drop[1]}px` }}
                 />
                 <Link
-                  href={`/contact?audience=${p.audience}#quote`}
-                  className="group relative block rounded-[20px] bg-white p-4 pt-7 shadow-[0_24px_40px_-26px_rgba(17,17,17,0.4)] transition-colors duration-500 hover:bg-walnut hover:text-white sm:rounded-[22px] sm:p-5 sm:pt-8 lg:rounded-[26px] lg:p-6 lg:pt-9"
+                  href="/#contact"
+                  className="group relative block rounded-[20px] bg-base p-4 pt-7 shadow-[0_24px_40px_-26px_rgba(17,17,17,0.4)] transition-colors duration-500 hover:bg-walnut hover:text-white sm:rounded-[22px] sm:p-5 sm:pt-8 lg:rounded-[26px] lg:p-6 lg:pt-9"
                 >
                   {/* hanging hole */}
                   <span
                     aria-hidden="true"
-                    className="absolute left-1/2 top-3 h-2.5 w-2.5 -translate-x-1/2 rounded-full border-2 border-ink/25 transition-colors group-hover:border-white/50"
+                    className="absolute left-1/2 top-3 h-2.5 w-2.5 -translate-x-1/2 rounded-full border-2 border-cream/25 transition-colors group-hover:border-white/50"
                   />
-                  <span className="text-[12px] font-semibold tracking-[0.2em] text-walnut transition-colors group-hover:text-sky">
+                  <span className="text-[12px] font-semibold tracking-[0.2em] text-sand transition-colors group-hover:text-sand">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="mt-2 text-[16px] font-medium leading-tight sm:mt-3 sm:text-[19px] lg:text-h3">{p.title}</h3>
-                  <p className="mt-2 text-[12.5px] leading-snug text-ink/70 transition-colors group-hover:text-white/80 sm:mt-3 sm:text-[14px] sm:leading-relaxed lg:text-[15px]">
+                  <p className="mt-2 text-[12.5px] leading-snug text-cream/70 transition-colors group-hover:text-white/80 sm:mt-3 sm:text-[14px] sm:leading-relaxed lg:text-[15px]">
                     {p.body}
                   </p>
                   <span className="mt-3 inline-flex items-center gap-2 text-[13px] font-medium sm:mt-5 lg:text-sm">

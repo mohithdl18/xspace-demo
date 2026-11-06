@@ -121,7 +121,7 @@ function Copy({ i, step }) {
     return (
       <div className="frame relative flex min-h-svh items-end pb-28 pt-28 lg:items-center lg:pb-0">
         <div className="max-w-2xl">
-          <p className="eyebrow text-sky!">Manufacturing</p>
+          <p className="eyebrow text-sand!">Manufacturing</p>
           <h2 id="process-heading" className="mt-6 text-h1 text-white">
             <SplitWords>From responsible timber to a calibrated sheet.</SplitWords>
           </h2>
@@ -141,7 +141,7 @@ function Copy({ i, step }) {
         {pad(i)}
       </span>
       <div className="max-w-md">
-        <p className="eyebrow text-sky!">Stage {pad(i)}</p>
+        <p className="eyebrow text-sand!">Stage {pad(i)}</p>
         <h3 className="mt-5 text-h2 text-white">{step.title}</h3>
         <p className="mt-5 text-[17px] leading-relaxed text-white/80">{step.body}</p>
       </div>
@@ -243,14 +243,14 @@ export function ProcessMain({ steps: _ignored }) {
       data-nav-theme="dark"
       aria-labelledby="process-heading"
       className={`on-dark relative w-full text-white ${
-        pinned ? "" : "overflow-hidden rounded-t-[28px] bg-ink md:rounded-t-[44px]"
+        pinned ? "" : "overflow-hidden rounded-t-[28px] bg-deep md:rounded-t-[44px]"
       }`}
       style={pinned ? { height: `${sceneCount * 100}svh` } : undefined}
     >
       {pinned ? (
         <div
           ref={stage}
-          className="sticky top-0 h-svh w-full overflow-hidden bg-ink shadow-[0_-28px_60px_-18px_rgba(17,17,17,0.45)]"
+          className="sticky top-0 h-svh w-full overflow-hidden bg-deep shadow-[0_-28px_60px_-18px_rgba(17,17,17,0.45)]"
         >
           {/* photos: stacked, crossfaded */}
           {scenes.map((i) => (

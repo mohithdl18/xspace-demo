@@ -23,7 +23,7 @@ export function PageIntro({ eyebrow, title, intro, children, tone = "birch", pan
             <SplitWords>{title}</SplitWords>
           </h1>
           {intro && (
-            <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-ink/70 md:text-lg md:leading-[1.75rem]" data-reveal>
+            <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-cream/70 md:text-lg md:leading-[1.75rem]" data-reveal>
               {intro}
             </p>
           )}

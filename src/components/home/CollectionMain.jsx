@@ -15,7 +15,7 @@ export function CollectionMain({ featured }) {
   return (
     <section
       aria-labelledby="collection-title"
-      className="sticky top-0 z-0 flex min-h-svh w-full flex-col justify-center rounded-t-[28px] bg-ice py-12 shadow-[0_-28px_60px_-18px_rgba(17,17,17,0.35)] md:rounded-t-[44px] md:py-14 [@media(max-height:780px)]:py-8"
+      className="sticky top-0 z-0 flex min-h-svh w-full flex-col justify-center rounded-t-[28px] bg-panel py-12 shadow-[0_-28px_60px_-18px_rgba(17,17,17,0.35)] md:rounded-t-[44px] md:py-14 [@media(max-height:780px)]:py-8"
     >
       <div className="frame">
         <SectionHead

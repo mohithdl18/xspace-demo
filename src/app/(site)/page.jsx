@@ -38,12 +38,12 @@ export default function Home() {
       <Hero eyebrow={home.heroEyebrow} headline={home.heroHeadline} copy={home.heroCopy} imageUrl={home.heroImageUrl} />
 
       {/* Everything after the hero slides up over it (the hero is sticky) */}
-      <div className="relative z-10 rounded-t-[28px] bg-white shadow-[0_-28px_60px_-18px_rgba(17,17,17,0.5)] md:rounded-t-[44px]">
+      <div className="relative z-10 rounded-t-[28px] bg-base shadow-[0_-28px_60px_-18px_rgba(17,17,17,0.5)] md:rounded-t-[44px]">
 
       <AboutMain company={company} home={home} years={years} categoryCount={categories.length} />
 
       {/* Everything from here slides up over the (sticky) About section */}
-      <div className="relative z-10 rounded-t-[28px] bg-white md:rounded-t-[44px]">
+      <div className="relative z-10 rounded-t-[28px] bg-base md:rounded-t-[44px]">
       <CollectionMain featured={featured} />
 
       {/* Everything from here slides up over the (sticky) collection */}
@@ -54,7 +54,7 @@ export default function Home() {
       <ProcessMain steps={steps} />
 
       {/* the rest of the page sits on white */}
-      <div className="relative bg-white">
+      <div className="relative bg-base">
 
       {/* ── Applications ───────────────────────────────────── */}
       <SpacesMain apps={apps} products={allProducts} />

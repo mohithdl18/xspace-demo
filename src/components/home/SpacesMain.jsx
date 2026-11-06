@@ -43,7 +43,7 @@ export function SpacesMain({ apps, products }) {
   return (
     <section
       aria-labelledby="apps-title"
-      className="sticky top-0 z-0 flex min-h-svh w-full flex-col justify-center bg-white py-14 md:py-16 [@media(max-height:780px)]:py-8"
+      className="sticky top-0 z-0 flex min-h-svh w-full flex-col justify-center bg-base py-14 md:py-16 [@media(max-height:780px)]:py-8"
     >
       <div className="frame">
         <SectionHead id="apps-title" eyebrow="Applications" title="Where each grade does its best work." />
@@ -82,7 +82,7 @@ export function SpacesMain({ apps, products }) {
                   className={`relative flex h-[min(56svh,520px)] cursor-pointer flex-col overflow-hidden rounded-[24px] outline-offset-4 transition-[background-color,color,box-shadow] duration-500 [@media(max-height:780px)]:h-[54svh] ${
                     open
                       ? "bg-walnut text-white shadow-[0_24px_50px_-24px_rgba(105,69,48,0.7)]"
-                      : "bg-ice text-ink shadow-[0_10px_30px_-22px_rgba(17,17,17,0.35)]"
+                      : "bg-panel text-cream shadow-[0_10px_30px_-22px_rgba(17,17,17,0.35)]"
                   }`}
                 >
                   {/* image: 60% → 0 */}
@@ -118,7 +118,7 @@ export function SpacesMain({ apps, products }) {
                   <div className="flex min-h-0 flex-1 flex-col p-5 xl:p-6">
                     <p
                       className={`text-[12px] font-semibold tracking-[0.2em] transition-colors duration-500 ${
-                        open ? "text-sky" : "text-walnut"
+                        open ? "text-sand" : "text-sand"
                       }`}
                     >
                       {String(i + 1).padStart(2, "0")}
@@ -144,7 +144,7 @@ export function SpacesMain({ apps, products }) {
                                     <Link
                                       href={`/products/${p.slug}`}
                                       tabIndex={open ? 0 : -1}
-                                      className="inline-flex min-h-[34px] items-center gap-2 rounded-full bg-white/12 px-3 text-[12px] font-medium text-white transition-colors hover:bg-white hover:text-walnut"
+                                      className="inline-flex min-h-[34px] items-center gap-2 rounded-full bg-white/12 px-3 text-[12px] font-medium text-white transition-colors hover:bg-base hover:text-sand"
                                     >
                                       {p.grade && <span className="font-semibold">{p.grade}</span>}
                                       <span>{p.name}</span>

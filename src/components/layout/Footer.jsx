@@ -61,7 +61,7 @@ export function Footer({ company }) {
     <footer
       id="site-footer"
       data-nav-theme="dark"
-      className="on-dark relative z-30 flex min-h-[50svh] flex-col overflow-hidden rounded-t-[28px] bg-ink text-white shadow-[0_-28px_60px_-18px_rgba(17,17,17,0.45)] md:rounded-t-[44px]"
+      className="on-dark relative z-30 flex min-h-[50svh] flex-col overflow-hidden rounded-t-[28px] bg-deep text-white shadow-[0_-28px_60px_-18px_rgba(17,17,17,0.45)] md:rounded-t-[44px]"
     >
       <div className="frame flex flex-col gap-6 pt-9 md:flex-row md:items-start md:justify-between md:gap-12 md:pt-10">
         <div data-footer-col className="max-w-md">
@@ -82,7 +82,7 @@ export function Footer({ company }) {
           className="space-y-2.5 text-[15px] md:text-right md:text-[16px]"
         >
           <p className="flex flex-wrap items-center gap-x-3 gap-y-1 md:justify-end">
-            <Phone className="h-4 w-4 shrink-0 text-sky" />
+            <Phone className="h-4 w-4 shrink-0 text-sand" />
             <span className="sr-only">Phone:</span>
             {company.phones.map((p, i) => (
               <span key={p} className="flex items-center gap-3">
@@ -113,7 +113,7 @@ export function Footer({ company }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`XSpace Plywood on ${label}`}
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white/80 transition-colors duration-300 hover:border-white hover:bg-white hover:text-ink"
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white/80 transition-colors duration-300 hover:border-white hover:bg-base hover:text-cream"
                   >
                     <Icon className="h-4 w-4" />
                   </a>
@@ -122,7 +122,7 @@ export function Footer({ company }) {
             </ul>
             <span aria-hidden="true" className="h-5 w-px bg-white/20" />
             <p className="flex items-center gap-3">
-              <Mail className="h-4 w-4 shrink-0 text-sky" />
+              <Mail className="h-4 w-4 shrink-0 text-sand" />
               <span className="sr-only">Email:</span>
               <a href={`mailto:${company.email}`} className="link-u">
                 {company.email}
@@ -144,9 +144,9 @@ export function Footer({ company }) {
         >
           <defs>
             <linearGradient id="footer-fade" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stopColor="#ffffff" stopOpacity="0.92" />
-              <stop offset="0.55" stopColor="#ffffff" stopOpacity="0.45" />
-              <stop offset="1" stopColor="#ffffff" stopOpacity="0" />
+              <stop offset="0" stopColor="#a8754f" stopOpacity="0.95" />
+              <stop offset="0.55" stopColor="#694530" stopOpacity="0.7" />
+              <stop offset="1" stopColor="#694530" stopOpacity="0" />
             </linearGradient>
           </defs>
           <text

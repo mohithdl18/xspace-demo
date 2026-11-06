@@ -58,7 +58,7 @@ export function ProcessSequence({ steps }) {
     <div ref={root} className="grid gap-12 lg:grid-cols-12">
       <div className="lg:col-span-5">
         <div
-          className="sticky top-28 hidden h-[calc(100svh-9rem)] items-center justify-center bg-ice lg:flex"
+          className="sticky top-28 hidden h-[calc(100svh-9rem)] items-center justify-center bg-panel lg:flex"
           aria-hidden="true"
         >
           <span className="placeholder-tag">Illustrative render</span>
@@ -89,15 +89,15 @@ export function ProcessSequence({ steps }) {
         </div>
       </div>
       <ol className="ps-list relative lg:col-span-6 lg:col-start-7">
-        <span aria-hidden="true" className="absolute left-0 top-0 h-full w-px bg-ink/10" />
+        <span aria-hidden="true" className="absolute left-0 top-0 h-full w-px bg-cream/10" />
         <span aria-hidden="true" className="ps-bar absolute left-0 top-0 h-full w-px origin-top bg-walnut" />
         {steps.map((s, i) => (
           <li key={s.id} className="ps-step relative py-14 pl-10 first:pt-2 lg:py-[18vh]">
-            <p className="text-[12px] font-semibold tracking-[0.2em] text-walnut">
+            <p className="text-[12px] font-semibold tracking-[0.2em] text-sand">
               STAGE {String(i + 1).padStart(2, "0")}
             </p>
             <h2 className="mt-3 text-h2">{s.title}</h2>
-            <p className="mt-4 max-w-lg text-[17px] leading-relaxed text-ink/70">{s.body}</p>
+            <p className="mt-4 max-w-lg text-[17px] leading-relaxed text-cream/70">{s.body}</p>
             {s.imageUrl ? (
               <div className="relative mt-8 aspect-16/10 overflow-hidden" data-reveal-img data-parallax-img>
                 <Image

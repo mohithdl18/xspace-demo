@@ -60,7 +60,6 @@ export function WhatsAppCta({ href, number, className = "" }) {
   return (
     <a
       ref={root}
-      data-cursor-hide
       href={href}
       target="_blank"
       rel="noopener noreferrer"

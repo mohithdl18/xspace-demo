@@ -16,6 +16,7 @@ const nextConfig = {
   // pages that were removed / renamed
   async redirects() {
     return [
+      { source: "/contact", destination: "/#contact", permanent: true },
       { source: "/manufacturing", destination: "/#process", permanent: true },
       { source: "/applications", destination: "/", permanent: true },
       { source: "/resources", destination: "/faq", permanent: true },

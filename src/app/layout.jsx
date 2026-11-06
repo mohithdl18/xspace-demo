@@ -11,7 +11,7 @@ export const metadata = {
   applicationName: "XSpace Plywood",
   formatDetection: { telephone: false },
 };
-export const viewport = { themeColor: "#FFFFFF", width: "device-width", initialScale: 1 };
+export const viewport = { themeColor: "#130E0B", width: "device-width", initialScale: 1 };
 export default function RootLayout({ children }) {
   return (
     <html lang="en-IN" suppressHydrationWarning>

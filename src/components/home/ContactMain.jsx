@@ -20,7 +20,7 @@ export function ContactMain({ company, home, brochure }) {
     <section
       id="contact-main"
       aria-labelledby="closing-title"
-      className="relative flex min-h-svh w-full items-center bg-white pb-16 pt-28 lg:sticky lg:top-0 lg:py-20 [@media(max-height:780px)]:lg:py-16"
+      className="relative flex min-h-svh w-full items-center bg-base pb-16 pt-28 lg:sticky lg:top-0 lg:py-20 [@media(max-height:780px)]:lg:py-16"
     >
       <div className="frame grid w-full gap-10 lg:grid-cols-12 lg:items-center lg:gap-12">
         {/* left: heading (unchanged) */}
@@ -31,7 +31,7 @@ export function ContactMain({ company, home, brochure }) {
           <h2 id="closing-title" className="mt-5 text-h1" data-split>
             <SplitWords>{home.closingHeading}</SplitWords>
           </h2>
-          <p className="mt-6 max-w-md text-[17px] leading-relaxed text-ink/70" data-reveal>
+          <p className="mt-6 max-w-md text-[17px] leading-relaxed text-cream/70" data-reveal>
             {home.closingCopy}
           </p>
         </div>
@@ -44,7 +44,7 @@ export function ContactMain({ company, home, brochure }) {
             className="lg:h-[min(30svh,280px)]"
           />
 
-          {/* <div className="relative h-[200px] overflow-hidden rounded-[24px] bg-ice lg:h-[min(26svh,250px)]">
+          {/* <div className="relative h-[200px] overflow-hidden rounded-[24px] bg-panel lg:h-[min(26svh,250px)]">
             <iframe
               title={`Map showing ${company.name}`}
               src={mapSrc}
@@ -57,27 +57,27 @@ export function ContactMain({ company, home, brochure }) {
               href={mapLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="absolute bottom-3 right-3 inline-flex min-h-[36px] items-center gap-2 rounded-full bg-white px-4 text-[12px] font-medium shadow-[0_6px_16px_-6px_rgba(17,17,17,0.35)] transition-colors hover:bg-ink hover:text-white"
+              className="absolute bottom-3 right-3 inline-flex min-h-[36px] items-center gap-2 rounded-full bg-base px-4 text-[12px] font-medium shadow-[0_6px_16px_-6px_rgba(17,17,17,0.35)] transition-colors hover:bg-deep hover:text-white"
             >
               Open in Google Maps <ArrowRight className="h-3.5 w-3.5" />
             </a>
           </div> */}
 
-          <div className="flex items-center gap-5 rounded-[24px] bg-ice p-5">
+          <div className="flex items-center gap-5 rounded-[24px] bg-panel p-5">
             <div
               className="relative h-20 w-[60px] shrink-0 rounded-[6px] shadow-[5px_5px_0_#C8E4F4]"
               style={{ backgroundImage: grainUrl("oak", 9), backgroundSize: "cover" }}
               aria-hidden="true"
             >
-              <span className="absolute inset-x-1.5 bottom-1.5 text-[6px] font-semibold tracking-[0.2em] text-ink">XSPACE</span>
+              <span className="absolute inset-x-1.5 bottom-1.5 text-[6px] font-semibold tracking-[0.2em] text-cream">XSPACE</span>
             </div>
             <div className="min-w-0">
               <p className="text-[16px] font-medium">{brochure?.title ?? "Product brochure"}</p>
-              {brochure?.description && <p className="mt-1 text-[13px] text-ink/60">{brochure.description}</p>}
+              {brochure?.description && <p className="mt-1 text-[13px] text-cream/60">{brochure.description}</p>}
               {brochure?.fileUrl ? (
                 <a href={brochure.fileUrl} download className="link-u mt-2 inline-flex items-center gap-2 text-sm font-medium">
                   <Download /> Download brochure{" "}
-                  {brochure.fileSize && <span className="text-ink/50">({brochure.fileSize})</span>}
+                  {brochure.fileSize && <span className="text-cream/50">({brochure.fileSize})</span>}
                 </a>
               ) : (
                 <Link

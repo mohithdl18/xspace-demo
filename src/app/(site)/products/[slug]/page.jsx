@@ -57,12 +57,12 @@ export default async function ProductPage({ params }) {
       },
     ],
   };
-  const pending = <span className="text-ink/50">To be confirmed — ask our team</span>;
+  const pending = <span className="text-cream/50">To be confirmed — ask our team</span>;
   return (
     <>
       <section className="pb-16 pt-28 md:pt-36">
         <div className="frame">
-          <nav aria-label="Breadcrumb" className="text-[13px] text-ink/60">
+          <nav aria-label="Breadcrumb" className="text-[13px] text-cream/60">
             <ol className="flex flex-wrap items-center gap-2">
               <li>
                 <Link href="/products" className="link-u">
@@ -76,7 +76,7 @@ export default async function ProductPage({ params }) {
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
-              <li aria-current="page" className="text-ink">
+              <li aria-current="page" className="text-cream">
                 {p.name}
               </li>
             </ol>
@@ -95,13 +95,13 @@ export default async function ProductPage({ params }) {
             <div className="lg:col-span-5 lg:pt-6">
               <div className="flex flex-wrap items-center gap-2">
                 {p.grade && <span className="badge">{p.grade}</span>}
-                <span className="text-[12px] uppercase tracking-[0.16em] text-ink/60">
+                <span className="text-[12px] uppercase tracking-[0.16em] text-cream/60">
                   {p.gradeLabel || p.category.name}
                 </span>
               </div>
               <h1 className="mt-5 text-h1">{p.name}</h1>
-              {p.tagline && <p className="mt-4 text-[19px] text-walnut">{p.tagline}</p>}
-              <p className="mt-6 text-[16px] leading-relaxed text-ink/75">{p.description}</p>
+              {p.tagline && <p className="mt-4 text-[19px] text-sand">{p.tagline}</p>}
+              <p className="mt-6 text-[16px] leading-relaxed text-cream/75">{p.description}</p>
 
               {p.thicknesses.length > 0 && (
                 <div className="mt-8">
@@ -136,7 +136,7 @@ export default async function ProductPage({ params }) {
                 {/* <CompareButton slug={p.slug} name={p.name} className="min-h-[48px]! px-5" /> */}
               </div>
               {!p.verified && (
-                <p className="mt-6 border-l-2 border-oak bg-ice px-4 py-3 text-[13px] text-slate">
+                <p className="mt-6 border-l-2 border-oak bg-panel px-4 py-3 text-[13px] text-cream/60">
                   Detailed specifications for this product are being added. Contact us for current grades and sizes.
                 </p>
               )}
@@ -145,26 +145,26 @@ export default async function ProductPage({ params }) {
         </div>
       </section>
 
-      <section className="rule bg-white py-20 md:py-24">
+      <section className="rule bg-base py-20 md:py-24">
         <div className="frame grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <h2 className="text-h3">Specifications</h2>
-            <dl className="mt-6 border-t border-ink/10">
+            <dl className="mt-6 border-t border-cream/10">
               {p.specs.length ? (
                 p.specs.map((s) => (
                   <div
                     key={s.label}
-                    className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-4 border-b border-ink/10 py-4 text-[15px]"
+                    className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-4 border-b border-cream/10 py-4 text-[15px]"
                   >
-                    <dt className="text-ink/60">{s.label}</dt>
+                    <dt className="text-cream/60">{s.label}</dt>
                     <dd className="font-medium">{s.value}</dd>
                   </div>
                 ))
               ) : (
-                <div className="border-b border-ink/10 py-4 text-[15px]">{pending}</div>
+                <div className="border-b border-cream/10 py-4 text-[15px]">{pending}</div>
               )}
-              <div className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-4 border-b border-ink/10 py-4 text-[15px]">
-                <dt className="text-ink/60">Thickness</dt>
+              <div className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-4 border-b border-cream/10 py-4 text-[15px]">
+                <dt className="text-cream/60">Thickness</dt>
                 <dd className="font-medium">{p.thicknesses.length ? p.thicknesses.join(", ") : pending}</dd>
               </div>
             </dl>
@@ -191,7 +191,7 @@ export default async function ProductPage({ params }) {
                 <ul className="mt-6 flex flex-wrap gap-2">
                   {p.applications.map((a) => (
                     <li key={a}>
-                      <Link href={`/products?application=${encodeURIComponent(a)}`} className="chip hover:border-ink">
+                      <Link href={`/products?application=${encodeURIComponent(a)}`} className="chip hover:border-cream">
                         {a}
                       </Link>
                     </li>
@@ -216,9 +216,9 @@ export default async function ProductPage({ params }) {
             <div>
               <h2 className="text-h3">Documents</h2>
               {docs.length ? (
-                <ul className="mt-6 border-t border-ink/10">
+                <ul className="mt-6 border-t border-cream/10">
                   {docs.map((d) => (
-                    <li key={d.id} className="flex items-center justify-between gap-4 border-b border-ink/10 py-4">
+                    <li key={d.id} className="flex items-center justify-between gap-4 border-b border-cream/10 py-4">
                       <span className="text-[15px]">{d.title}</span>
                       {d.fileUrl ? (
                         <a
@@ -229,19 +229,19 @@ export default async function ProductPage({ params }) {
                           <Download /> Download
                         </a>
                       ) : (
-                        <span className="text-[13px] text-ink/50">Coming soon</span>
+                        <span className="text-[13px] text-cream/50">Coming soon</span>
                       )}
                     </li>
                   ))}
                 </ul>
               ) : (
-                <p className="mt-6 text-[15px] text-ink/70">
+                <p className="mt-6 text-[15px] text-cream/70">
                   Need a technical sheet?{" "}
-                  <Link href="/faq" className="link-u font-medium text-ink">
+                  <Link href="/faq" className="link-u font-medium text-cream">
                     See our FAQs
                   </Link>{" "}
                   or{" "}
-                  <Link href={`/contact?product=${encodeURIComponent(p.name)}#quote`} className="link-u font-medium text-ink">
+                  <Link href="/#contact" className="link-u font-medium text-cream">
                     ask us directly
                   </Link>
                   .
