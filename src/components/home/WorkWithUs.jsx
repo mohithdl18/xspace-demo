@@ -175,7 +175,7 @@ export function WorkWithUs() {
                 />
                 <Link
                   href="/#contact"
-                  className="group relative block rounded-[20px] bg-base p-4 pt-7 shadow-[0_24px_40px_-26px_rgba(17,17,17,0.4)] transition-colors duration-500 hover:bg-walnut hover:text-white sm:rounded-[22px] sm:p-5 sm:pt-8 lg:rounded-[26px] lg:p-6 lg:pt-9"
+                  className="group relative block rounded-[20px] bg-walnut p-4 pt-7 shadow-[0_24px_40px_-26px_rgba(17,17,17,0.4)] transition-colors duration-500 hover:bg-base hover:text-white sm:rounded-[22px] sm:p-5 sm:pt-8 lg:rounded-[26px] lg:p-6 lg:pt-9"
                 >
                   {/* hanging hole */}
                   <span
